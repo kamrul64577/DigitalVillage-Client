@@ -42,28 +42,28 @@ const LogIn = () => {
                 <div className="w-25 py-5  mx-auto ">
                     <Card className="mt-5">
                         <div className="card-bg">
-                            <h2 className="text-center mb-4">লগইন </h2>
+                            <h2 className="text-center mb-4">Login</h2>
 
                             {authError && <Alert variant="danger">{authError}</Alert>}
                             <Form onSubmit={handleLogIn}>
                                 <Form.Group id="email">
-                                    <Form.Label>ইমেইল</Form.Label>
+                                    <Form.Label>Email</Form.Label>
                                     <Form.Control type="email" name="email" onChange={handleOnChange} required />
                                 </Form.Group>
                                 <Form.Group id="password">
-                                    <Form.Label>পাসওয়ার্ড</Form.Label>
+                                    <Form.Label>Password</Form.Label>
                                     <Form.Control type="password" name="password" onChange={handleOnChange} required />
                                 </Form.Group>
 
-                                <Button className="w-100 text-center pb-0 my-3 bg-success text-light" type="submit"><h5>লগইন করুন</h5></Button>
+                                <Button className="w-100 text-center pb-0 my-3 bg-success text-light" type="submit"><h5>Submit</h5></Button>
                             </Form>
                             <div className="w-100 text-center mt-3 forgot-password-div">
-                                <Link className="forgot-password" to="/forgot-password">পাসওয়ার্ড ভুলে গেছেন? </Link>
+                                <Link className="forgot-password" to="/forgot-password">Forget Password? </Link>
                             </div>
                         </div>
                     </Card>
                     <div className="w-100 text-center mt-3 signup-bg">
-                        নতুন একাউন্ট প্রয়োজন?  <Link className="signup-link" to="/register">রেজিস্ট্রার করুন</Link>
+                        Create?  <Link className="signup-link" to="/register">Register</Link>
                     </div>
                 </div>
             </div>

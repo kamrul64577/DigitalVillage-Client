@@ -47,33 +47,33 @@ const Register = () => {
                                     {authError}
                                 </Alert>
                             }
-                            <h2 className="text-center mb-4">সাইন আপ </h2>
+                            <h2 className="text-center mb-4">Signup </h2>
                             <Form onSubmit={handleRegister}>
                                 <Form.Group id="name">
-                                    <Form.Label>আপনার নাম</Form.Label>
+                                    <Form.Label>Name</Form.Label>
                                     <Form.Control type="text" name="name" onChange={handleOnChange} required />
                                 </Form.Group>
                                 <Form.Group id="email">
-                                    <Form.Label>ইমেইল</Form.Label>
+                                    <Form.Label>Email</Form.Label>
                                     <Form.Control type="email" name="email" onChange={handleOnChange} required />
                                 </Form.Group>
                                 <Form.Group id="password">
-                                    <Form.Label>পাসওয়ার্ড</Form.Label>
+                                    <Form.Label>Password</Form.Label>
                                     <Form.Control type="password" name="password" onChange={handleOnChange} required />
                                 </Form.Group>
                                 <Form.Group id="password-confirm">
-                                    <Form.Label>পাসওয়ার্ড নিশ্চিত করুন</Form.Label>
+                                    <Form.Label>Confirm Password</Form.Label>
                                     <Form.Control type="password" name="password2" onChange={handleOnChange} required />
                                 </Form.Group>
                                 <Button className="w-100 text-center pb-0 my-3 bg-success text-light" type="submit">
-                                    <h5>সাইন আপ করুন</h5>
+                                    <h5>Submit</h5>
                                 </Button>
                             </Form>
                         </div>
                         
                     </Card>
                     <div className="w-100 text-center signup-bg mt-1">
-                        একাউন্ট করা আছে? <Link className="signup-link" to="/login">লগইন</Link>
+                        Already have account? <Link className="signup-link" to="/login">Login</Link>
                     </div>
                 </div>
             </div>
