@@ -4,6 +4,8 @@ import {
   Route
 } from "react-router-dom";
 import Home from "./Pages/Home";
+import Footer from "./Pages/Shared/Footer/Footer";
+import Navigation from "./Pages/Shared/Navigation/Navigation";
 // import AuthProvider from "./context/AuthProvider/AuthProvider";
 // import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 // import Home from './Pages/Home/Home/Home';
@@ -26,16 +28,17 @@ function App() {
   return (
     <div>
       {/* <AuthProvider> */}
-        <Router>
-          <Switch>
+      <Router>
+        <Navigation></Navigation>
+        <Switch>
 
-            <Route path="/">
-              <Home></Home>
-            </Route>
-            <Route path="/home">
-              <Home></Home>
-            </Route>
-            {/* <Route path="/login">
+          <Route path="/">
+            <Home></Home>
+          </Route>
+          <Route path="/home">
+            <Home></Home>
+          </Route>
+          {/* <Route path="/login">
               <LogIn></LogIn>
             </Route>
             <Route path="/register">
@@ -76,16 +79,12 @@ function App() {
               <RegisterForEvent></RegisterForEvent>
             </PrivateRoute>
 
-
             <PrivateRoute path="/date">
               <MaterialUIPickers></MaterialUIPickers>
             </PrivateRoute> */}
-            
-            
-            
-            
-          </Switch>
-        </Router>
+        </Switch>
+        <Footer></Footer>
+      </Router>
       {/* </AuthProvider> */}
     </div>
   );
