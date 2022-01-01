@@ -12,8 +12,8 @@ import Navigation from "./Pages/Shared/Navigation/Navigation";
 // import LogIn from "./Pages/LogIn/LogIn/LogIn";
 // import PrivateRoute from "./Pages/LogIn/PrivateRoute/PrivateRoute";
 // import Register from "./Pages/LogIn/Register/Register";
-// import AboutUs from './Pages/AboutUs/AboutUs'
-// import ContactUs from "./Pages/ContactUs/ContactUs";
+import AboutUs from './Pages/AboutUs/AboutUs'
+import ContactUs from "./Pages/ContactUs/ContactUs";
 // import RepairApplication from "./Pages/Home/RepairApplication/RepairApplication";
 // import ApplyService from "./Pages/Services/ApplyService/ApplyService";
 // import AllServices from "./Pages/AllServices/AllServices";
@@ -32,7 +32,7 @@ function App() {
         <Navigation></Navigation>
         <Switch>
 
-          <Route path="/">
+          <Route exact path="/">
             <Home></Home>
           </Route>
           <Route path="/home">
@@ -43,20 +43,16 @@ function App() {
             </Route>
             <Route path="/register">
               <Register></Register>
-            </Route>
-            <Route exact path="/">
-              <Home></Home>
-            </Route>
-            <Route path="/home">
-              <Home></Home>
-            </Route>
+            </Route> */}
+            
+            
             <Route path="/about-us">
               <AboutUs></AboutUs>
             </Route>
             <Route path="/contact-us">
               <ContactUs></ContactUs>
             </Route>
-            <Route path="/newsDetails/:newsId">
+            {/* <Route path="/newsDetails/:newsId">
               <NewsDetails></NewsDetails>
             </Route>
 
