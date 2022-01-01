@@ -1,4 +1,4 @@
-# Getting Started with My Mearn Stack Project
+# Getting Started with our Mearn Stack Project
 
 This Our My Digital Vilage website [DGP]().
 
