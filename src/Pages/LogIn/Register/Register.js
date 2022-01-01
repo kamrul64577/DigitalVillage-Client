@@ -6,11 +6,12 @@ import useAuth from '../../../hooks/useAuth';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Footer from '../../Shared/Footer/Footer';
 import { Form } from 'react-bootstrap';
+import useFirebase from '../../../hooks/useFirebas';
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
     const history = useHistory();
-    const { registerUser, isLoading, user, authError } = useAuth();
+    const { registerUser, isLoading, user, authError } = useFirebase();
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;

@@ -32,3 +32,25 @@ body {
     border-radius: 40px;
     
 }
+.user img{
+    margin-left: 10px;
+ width:30px;
+ height:30px;
+  border-radius: 40px;
+ 
+}
+.logout-btn{
+    background-color:#424D83;
+    border: 1px solid green;
+    padding-inline:30px;
+    border-radius:10px;
+    padding-block: 5px;
+    font-size: 20px;
+
+}
+.logout-btn:hover{
+    background-color:#9ea0a7;
+    padding-inline:30px;
+    border-radius:10px;
+
+}

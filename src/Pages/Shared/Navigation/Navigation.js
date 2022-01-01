@@ -1,8 +1,10 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom'; 
+import useFirebase from '../../../hooks/useFirebas'
 import './Navigation.css'
 const Navigation = () => {
+    const {user,logOut}= useFirebase()
     return (
         <div>
             <Navbar className="navbar" expand="lg">
@@ -22,11 +24,18 @@ const Navigation = () => {
                         </Nav>
                         <Nav className=" ">
 
-                            {/* {user.email && <Button className="text-light  " onClick={logOut}><h6>Log Out</h6></Button>}
-                            {!user.email && <NavLink className="nav-li sign-up" activeStyle={{ color: "#FFFFFF" }} exact to="/login" >LogIn</NavLink>} */}
+                            {user.email && <button className="logout-btn" onClick={logOut}><h6>Log Out</h6></button>}
+                            {!user.email && <NavLink className="nav-li sign-up" activeStyle={{ color: "#FFFFFF" }} to="/login">LogIn</NavLink>}
                             {/* <NavLink className="nav-li sign-up" activeStyle={{ color: "#FFFFFF" }} exact to="/userlogin">Login</NavLink>  */}
 
-                            {/* <NavLink className="nav-li sign-up" activeStyle={{ color: "#FFFFFF" }} exact to="/userlogin">Logout</NavLink> */}
+                            {/* {user.email && < NavLink className="nav-li sign-up" activeStyle={{ color: "#FFFFFF" }} exact to="/logout">Logout</NavLink>} */}
+            { user.email &&
+           <div className="d-flex user my-2">
+           <img className="bg-white ms-5" src={user?.photoURL} alt="" />
+           <p className="mt-1 ms-2 text-white">{user?.displayName}</p>
+           
+           </div>
+       } 
 
                         </Nav>
                     </Navbar.Collapse>
