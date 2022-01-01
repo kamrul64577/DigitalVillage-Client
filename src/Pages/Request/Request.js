@@ -7,7 +7,7 @@ const Request = () => {
         <div>
             {/* request section */}
             <Container>
-                <Row className="w-75 mx-auto">
+                <Row className="mx-auto" style={{width: '95%'}}>
                     <div className="col-8">
                         {/* <h3 className="repair my-4">আপনার কি নতুন  কিছু  তৈরি  বা মেরামত করা দরকার?</h3> <br /> */}
                         <h3 className="repair my-4 text-end">Do you want to request for any service?</h3>
