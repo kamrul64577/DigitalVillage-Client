@@ -2,7 +2,6 @@ import React from 'react'
 import './AboutUs.css'
 import about from '../../images/About.jpg'
 import Navigation from '../Shared/Navigation/Navigation'
-import Footer from '../Shared/Footer/Footer'
 
 export default function About() {
     return (
@@ -24,7 +23,6 @@ export default function About() {
                     </div>
                 </div>
             </div>
-            <Footer></Footer>
         </>
     )
 }

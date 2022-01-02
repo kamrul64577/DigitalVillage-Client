@@ -22,8 +22,8 @@ const Banner = () => {
         // console.log(`Done after 5 loops!`)
     }
     return (
-        <div>
-            <section className="banner d-flex justify-content-center align-items-center">
+        <>
+            <div className="banner d-flex justify-content-center align-items-center">
                 <h1 className="text-white">Welcome to Digital Village
 
                     <br />{' '}
@@ -43,8 +43,8 @@ const Banner = () => {
                         />
                     </span>
                 </h1>
-            </section>
-        </div>
+            </div>
+        </>
     );
 };
 

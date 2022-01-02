@@ -3,7 +3,6 @@ import './ContactUs.css'
 
 import emailjs from "emailjs-com";
 import Navigation from '../Shared/Navigation/Navigation';
-import Footer from '../Shared/Footer/Footer';
 
 export default function ContactUs() {
     function sendEmail(e) {
@@ -85,7 +84,6 @@ export default function ContactUs() {
                 </div>
 
             </section>
-            <Footer></Footer>
         </>
     )
 }
