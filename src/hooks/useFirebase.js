@@ -10,7 +10,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
-    const [userType, setUserType] = useState('');
+    const [userType] = useState('');
     // const [admin, setAdmin] = useState(false);
     // const [journalist, setJournalist] = useState(false);
     const [token, setToken] = useState('');
@@ -32,7 +32,7 @@ const useFirebase = () => {
 
                 // send name to firebase after creation
                 updateProfile(auth.currentUser, {
-                    displayName: name
+                    displayName: name,  photoURL: "https://cdn2.iconfinder.com/data/icons/font-awesome/1792/user-512.png"
                 }).then(() => {
                     // Profile updated!
                     // ...
@@ -110,7 +110,7 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName }
-        fetch('http://localhost:5000/users', {
+        fetch('https://shielded-falls-80975.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'
@@ -120,11 +120,11 @@ const useFirebase = () => {
             .then()
     }
   
-    useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
-            .then(res => res.json())
-            .then(data => setUserType(data))
-    },[user.email])
+    // useEffect(() => {
+    //     fetch(`https://shielded-falls-80975.herokuapp.com/users/${user.email}`)
+    //         .then(res => res.json())
+    //         .then(data => setUserType(data))
+    // },[user.email])
 
     // useEffect(() => {
     //     fetch(`http://localhost:5000/users/${user.email}`)
