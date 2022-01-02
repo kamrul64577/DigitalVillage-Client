@@ -24,6 +24,9 @@ body {
     color:aliceblue;
     border-bottom: 2px solid rgb(209, 199, 199);
 }
+.nav-li:active{
+    color:aliceblue;
+}
 
 .nav-li.sign-up{
     padding: 5px 25px;
