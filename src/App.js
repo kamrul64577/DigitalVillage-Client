@@ -5,18 +5,20 @@ import {
 } from "react-router-dom";
 
 // import AuthProvider from "./context/AuthProvider/AuthProvider";
-import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
+// import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 // import Home from './Pages/Home/Home/Home';
 // import LogIn from "./Pages/LogIn/LogIn/LogIn";
 // import PrivateRoute from "./Pages/LogIn/PrivateRoute/PrivateRoute";
 // import Register from "./Pages/LogIn/Register/Register";
-import AboutUs from "./Pages/AboutUs/AboutUs"
+import AboutUs from "./Pages/Aboutus/AboutUs"
 import ContactUs from "./Pages/ContactUs/ContactUs";
 import Home from "./Pages/Home";
 import LogIn from "./Pages/LogIn/LogIn/LogIn";
 import Register from "./Pages/LogIn/Register/Register";
 import AuthProvider from "./context/AuthProvider/AuthProvider";
 import Footer from "./Pages/Shared/Footer/Footer";
+import PrivateRoute from "./Pages/LogIn/PrivateRoute/PrivateRoute";
+import Event from "./Pages/Event/Event/Event";
 // import AuthProvider from "./context/AuthProvider/AuthProvider";
 // import RepairApplication from "./Pages/Home/RepairApplication/RepairApplication";
 // import ApplyService from "./Pages/Services/ApplyService/ApplyService";
@@ -62,11 +64,11 @@ function App() {
 
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
-            </PrivateRoute>
+            </PrivateRoute> */}
             <PrivateRoute path="/event">
               <Event></Event>
             </PrivateRoute>
-            <PrivateRoute path="/repair">
+            {/* <PrivateRoute path="/repair">
               <RepairApplication></RepairApplication>
             </PrivateRoute>
             <PrivateRoute path="/applyService">

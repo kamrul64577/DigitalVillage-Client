@@ -1,7 +1,7 @@
 import React from 'react';
 import Banner from './Banner/Banner';
 import News from './News/News';
-import Navigation from './Pages/Shared/Navigation/Navigation';
+import Navigation from './Shared/Navigation/Navigation';
 import Request from './Request/Request';
 
 
