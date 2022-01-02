@@ -1,8 +1,8 @@
 import React from 'react';
+import Navigation from '../Shared/Navigation/Navigation';
 import Banner from './Banner/Banner';
-import News from './News/News';
 import Request from './Request/Request';
-import Navigation from './Shared/Navigation/Navigation';
+import News from './News/News';
 
 const Home = () => {
     return (

@@ -14,7 +14,7 @@ const Navigation = () => {
                         <Nav className="mx-auto nav-ul">
 
                             <NavLink className="nav-li" activeStyle={{ color: "#FFFFFF" }} exact to="/">Home</NavLink>
-                            <NavLink className="nav-li" activeStyle={{ color: "#FFFFFF" }} exact to="/services">Services</NavLink>
+                            <NavLink className="nav-li" activeStyle={{ color: "#FFFFFF" }} exact to="/all-services">Services</NavLink>
                             <NavLink className="nav-li" activeStyle={{ color: "#FFFFFF" }} exact to="/dashboard">Dashboard </NavLink>
                             <NavLink className="nav-li" activeStyle={{ color: "#FFFFFF" }} exact to="/event">Sports Events </NavLink>
                             <NavLink className="nav-li" activeStyle={{ color: "#FFFFFF" }} exact to="/about-us">About Us</NavLink>

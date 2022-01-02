@@ -68,7 +68,7 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
-    const siginWithGoogle = (location, history) => {
+    const signInWithGoogle = (location, history) => {
         setIsLoading(true)
         signInWithPopup(auth, googleProvider)
             .then((result) => {
@@ -105,7 +105,7 @@ const useFirebase = () => {
 
         return () => unsubcribed;
 
-    }, [])
+    }, [auth])
 
 
     const saveUser = (email, displayName, method) => {
@@ -149,7 +149,7 @@ const useFirebase = () => {
         user,
         authError,
         isLoading,
-        siginWithGoogle,
+        signInWithGoogle,
         registerUser,
         loginUser,
         // admin,

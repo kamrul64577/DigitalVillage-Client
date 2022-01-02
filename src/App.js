@@ -3,7 +3,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import Home from "./Pages/Home";
+import Home from "./Pages/Home/Home";
 import Footer from "./Pages/Shared/Footer/Footer";
 // import AuthProvider from "./context/AuthProvider/AuthProvider";
 // import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
@@ -11,8 +11,9 @@ import Footer from "./Pages/Shared/Footer/Footer";
 // import LogIn from "./Pages/LogIn/LogIn/LogIn";
 // import PrivateRoute from "./Pages/LogIn/PrivateRoute/PrivateRoute";
 // import Register from "./Pages/LogIn/Register/Register";
-import AboutUs from "./Pages/AboutUs/AboutUs"
 import ContactUs from "./Pages/ContactUs/ContactUs";
+import AboutUs from "./Pages/AboutUs/AboutUs";
+import AllServices from "./Pages/AllServices/AllServices";
 // import RepairApplication from "./Pages/Home/RepairApplication/RepairApplication";
 // import ApplyService from "./Pages/Services/ApplyService/ApplyService";
 // import AllServices from "./Pages/AllServices/AllServices";
@@ -65,11 +66,11 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/applyService">
               <ApplyService></ApplyService>
-            </PrivateRoute>
-            <PrivateRoute path="/services">
+            </PrivateRoute> */}
+            <Route path="/all-services">
               <AllServices></AllServices>
-            </PrivateRoute>
-            <PrivateRoute path="/registerEvent/:eventId">
+            </Route>
+            {/* <PrivateRoute path="/registerEvent/:eventId">
               <RegisterForEvent></RegisterForEvent>
             </PrivateRoute>
 
