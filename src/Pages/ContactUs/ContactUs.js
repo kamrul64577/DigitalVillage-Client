@@ -79,7 +79,7 @@ export default function ContactUs() {
                                 <span>Type Your Message...</span>
                             </div>
                             <div className="inputBox">
-                                <input onClick={onButtonClickHandler} type="submit" name="" value="Sent" />
+                                <input onClick={onButtonClickHandler} type="submit" name="" value="Send" />
                             </div>
                             <ToastContainer
                                 position="top-right"
