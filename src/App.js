@@ -29,7 +29,7 @@ function App() {
     <div>
       {/* <AuthProvider> */}
       <Router>
-        <Navigation></Navigation>
+        
         <Switch>
 
           <Route exact path="/">
