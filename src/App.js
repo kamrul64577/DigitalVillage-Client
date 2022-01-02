@@ -32,24 +32,22 @@ function App() {
   return (
     <div>
       <AuthProvider>
-      <Router>
-        <Switch>
+        <Router>
 
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/home">
-            <Home></Home>
-          </Route>
-          <Route path="/login">
+          <Switch>
+
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+            <Route path="/login">
               <LogIn></LogIn>
             </Route>
             <Route path="/register">
               <Register></Register>
-              </Route>
-            
-            
-            
+            </Route>
             <Route path="/about-us">
               <AboutUs></AboutUs>
             </Route>
@@ -82,9 +80,9 @@ function App() {
             <PrivateRoute path="/date">
               <MaterialUIPickers></MaterialUIPickers>
             </PrivateRoute> */}
-        </Switch>
-        <Footer></Footer>
-      </Router>
+          </Switch>
+          <Footer></Footer>
+        </Router>
       </AuthProvider>
     </div>
   );
