@@ -1,10 +1,12 @@
 import React from 'react';
-import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom'; 
-import useFirebase from '../../../hooks/useFirebas'
+import useAuth from '../../../hooks/useAuth';
 import './Navigation.css'
+
+
 const Navigation = () => {
-    const {user,logOut}= useFirebase()
+    const {user,logOut}= useAuth()
     return (
         <>
             <Navbar className="navbar" expand="lg">
@@ -16,7 +18,7 @@ const Navigation = () => {
                         <Nav className="mx-auto nav-ul">
 
                             <NavLink className="nav-li" activeStyle={{ color: "#FFFFFF" }} exact to="/">Home</NavLink>
-                            <NavLink className="nav-li" activeStyle={{ color: "#FFFFFF" }} exact to="/services">Services</NavLink>
+                            <NavLink className="nav-li" activeStyle={{ color: "#FFFFFF" }} exact to="/all-services">Services</NavLink>
                             <NavLink className="nav-li" activeStyle={{ color: "#FFFFFF" }} exact to="/dashboard">Dashboard </NavLink>
                             <NavLink className="nav-li" activeStyle={{ color: "#FFFFFF" }} exact to="/event">Sports Events </NavLink>
                             <NavLink className="nav-li" activeStyle={{ color: "#FFFFFF" }} exact to="/about-us">About Us</NavLink>

@@ -3,20 +3,20 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-
 // import AuthProvider from "./context/AuthProvider/AuthProvider";
 // import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 // import Home from './Pages/Home/Home/Home';
 // import LogIn from "./Pages/LogIn/LogIn/LogIn";
 // import PrivateRoute from "./Pages/LogIn/PrivateRoute/PrivateRoute";
 // import Register from "./Pages/LogIn/Register/Register";
-import AboutUs from "./Pages/Aboutus/AboutUs"
+import AboutUs from "./Pages/AboutUs/AboutUs";
 import ContactUs from "./Pages/ContactUs/ContactUs";
 import Home from "./Pages/Home";
 import LogIn from "./Pages/LogIn/LogIn/LogIn";
 import Register from "./Pages/LogIn/Register/Register";
 import AuthProvider from "./context/AuthProvider/AuthProvider";
 import Footer from "./Pages/Shared/Footer/Footer";
+import AllServices from "./Pages/AllServices/AllServices";
 import PrivateRoute from "./Pages/LogIn/PrivateRoute/PrivateRoute";
 import Event from "./Pages/Event/Event/Event";
 // import AuthProvider from "./context/AuthProvider/AuthProvider";
@@ -34,24 +34,22 @@ function App() {
   return (
     <div>
       <AuthProvider>
-      <Router>
-        <Switch>
+        <Router>
 
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/home">
-            <Home></Home>
-          </Route>
-          <Route path="/login">
+          <Switch>
+
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+            <Route path="/login">
               <LogIn></LogIn>
             </Route>
             <Route path="/register">
               <Register></Register>
-              </Route>
-            
-            
-            
+            </Route>
             <Route path="/about-us">
               <AboutUs></AboutUs>
             </Route>
@@ -60,8 +58,8 @@ function App() {
             </Route>
             {/* <Route path="/newsDetails/:newsId">
               <NewsDetails></NewsDetails>
-            </Route>
-
+            </Route> */}
+{/* 
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
             </PrivateRoute> */}
@@ -73,20 +71,20 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/applyService">
               <ApplyService></ApplyService>
-            </PrivateRoute>
-            <PrivateRoute path="/services">
+            </PrivateRoute> */}
+            <Route path="/all-services">
               <AllServices></AllServices>
-            </PrivateRoute>
-            <PrivateRoute path="/registerEvent/:eventId">
+            </Route>
+            {/* <PrivateRoute path="/registerEvent/:eventId">
               <RegisterForEvent></RegisterForEvent>
             </PrivateRoute>
 
             <PrivateRoute path="/date">
               <MaterialUIPickers></MaterialUIPickers>
             </PrivateRoute> */}
-        </Switch>
-        <Footer></Footer>
-      </Router>
+          </Switch>
+          <Footer></Footer>
+        </Router>
       </AuthProvider>
     </div>
   );

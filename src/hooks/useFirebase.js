@@ -10,7 +10,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
-    const [userType, setUserType] = useState('');
+    const [userType] = useState('');
     // const [admin, setAdmin] = useState(false);
     // const [journalist, setJournalist] = useState(false);
     const [token, setToken] = useState('');
@@ -68,7 +68,7 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
-    const siginWithGoogle = (location, history) => {
+    const signInWithGoogle = (location, history) => {
         setIsLoading(true)
         signInWithPopup(auth, googleProvider)
             .then((result) => {
@@ -105,7 +105,7 @@ const useFirebase = () => {
 
         return () => unsubcribed;
 
-    }, [])
+    }, [auth])
 
 
     const saveUser = (email, displayName, method) => {
@@ -149,7 +149,7 @@ const useFirebase = () => {
         user,
         authError,
         isLoading,
-        siginWithGoogle,
+        signInWithGoogle,
         registerUser,
         loginUser,
         // admin,

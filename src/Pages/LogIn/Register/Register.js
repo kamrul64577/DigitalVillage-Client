@@ -6,7 +6,7 @@ import useAuth from '../../../hooks/useAuth';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Footer from '../../Shared/Footer/Footer';
 import { Form } from 'react-bootstrap';
-import useFirebase from '../../../hooks/useFirebas';
+import useFirebase from '../../../hooks/useFirebase';
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});

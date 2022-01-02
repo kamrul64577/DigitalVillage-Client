@@ -17,7 +17,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position:center; */
-    background: rgba(0, 0, 0, .6) url(../../images/home-banner.jpg);
+    background: rgba(0, 0, 0, .6) url(../../../images/home-banner.jpg);
     background-blend-mode: darken;
     background-size: cover;
     background-attachment: fixed;

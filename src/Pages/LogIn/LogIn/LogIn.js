@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { Link, NavLink, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-import useFirebase from '../../../hooks/useFirebas';
+import useFirebase from '../../../hooks/useFirebase';
 import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';
 
