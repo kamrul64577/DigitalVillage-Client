@@ -1,13 +1,14 @@
 import React from 'react'
-import './ContactUs.css'
 
 import emailjs from "emailjs-com";
 import Navigation from '../Shared/Navigation/Navigation';
+import { toast, ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './ContactUs.css'
 
 export default function ContactUs() {
     function sendEmail(e) {
         e.preventDefault();
-
         emailjs.sendForm('service_7w264rp', 'template_lj2ahsl', e.target, 'user_Tzk63u3RJr4YWhbY5Ji5u')
             .then((result) => {
                 console.log(result.text);
@@ -15,10 +16,16 @@ export default function ContactUs() {
                 console.log(error.text);
             });
         e.target.reset()
-    }
+    };
 
     const onButtonClickHandler = () => {
-        window.alert('Thank You For Contact With Us')
+        toast.success('Message\'s sent successfully.', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            progress: undefined,
+        });
     };
     return (
         <>
@@ -56,28 +63,27 @@ export default function ContactUs() {
                         </div>
                     </div>
 
-                    <div className="contactForm">
+                    <div className="contactForm mt-5">
                         <form onSubmit={sendEmail} >
-                            <h2>Sent Massage </h2>
+                            <h2>Sent Message </h2>
                             <div className="inputBox">
-                                <input type="text" name="name" required="required" />
+                                <input type="text" name="user_name" required="required" />
                                 <span>Your Name</span>
                             </div>
                             <div className="inputBox">
-                                <input type="text" name="email" required="required" />
+                                <input type="text" name="reply_to" required="required" />
                                 <span>Your Email</span>
                             </div>
                             <div className="inputBox">
-                                <input type="text" name="subject" required="required" />
-                                <span>Subject</span>
-                            </div>
-                            <div className="inputBox">
                                 <textarea required="required" name="message"></textarea>
-                                <span>Type Your Massage...</span>
+                                <span>Type Your Message...</span>
                             </div>
                             <div className="inputBox">
                                 <input onClick={onButtonClickHandler} type="submit" name="" value="Sent" />
                             </div>
+                            <ToastContainer
+                                position="top-right"
+                            />
                         </form>
                     </div>
 

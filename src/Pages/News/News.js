@@ -11,7 +11,7 @@ const News = () => {
         <div>
             {/* News Section  */}
             <>            
-                <div className="text-center py-5">
+                <div className="text-center">
                     <h1 className="news-header">Every Single Update From Our Journal</h1>
                     <p className="news-subHeader">Recent News</p>
                 </div>
