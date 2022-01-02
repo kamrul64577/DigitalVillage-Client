@@ -59,8 +59,8 @@ function App() {
             {/* <Route path="/newsDetails/:newsId">
               <NewsDetails></NewsDetails>
             </Route> */}
-{/* 
-            <PrivateRoute path="/dashboard">
+
+            {/* <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
             </PrivateRoute> */}
             <PrivateRoute path="/event">
