@@ -88,7 +88,7 @@ const useFirebase = () => {
     }
 
     // Observe user state
-  console.log(user)
+
     useEffect(() => {
         const unsubcribed = onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -120,11 +120,11 @@ const useFirebase = () => {
             .then()
     }
   
-    useEffect(() => {
-        fetch(`https://shielded-falls-80975.herokuapp.com/users/${user.email}`)
-            .then(res => res.json())
-            .then(data => setUserType(data))
-    },[user.email])
+    // useEffect(() => {
+    //     fetch(`https://shielded-falls-80975.herokuapp.com/users/${user.email}`)
+    //         .then(res => res.json())
+    //         .then(data => setUserType(data))
+    // },[user.email])
 
     // useEffect(() => {
     //     fetch(`http://localhost:5000/users/${user.email}`)

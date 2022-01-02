@@ -6,7 +6,7 @@ import './Navigation.css'
 const Navigation = () => {
     const {user,logOut}= useFirebase()
     return (
-        <div>
+        <>
             <Navbar className="navbar" expand="lg">
                 <Container>
 
@@ -42,7 +42,7 @@ const Navigation = () => {
                 </Container>
 
             </Navbar>
-        </div>
+        </>
     );
 };
 

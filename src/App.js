@@ -3,19 +3,21 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import Home from "./Pages/Home";
-import LogIn from "./Pages/LogIn/LogIn/LogIn";
-import Register from "./Pages/LogIn/Register/Register";
-import Footer from "./Pages/Shared/Footer/Footer";
-import Navigation from "./Pages/Shared/Navigation/Navigation";
+
 // import AuthProvider from "./context/AuthProvider/AuthProvider";
-// import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
+import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 // import Home from './Pages/Home/Home/Home';
 // import LogIn from "./Pages/LogIn/LogIn/LogIn";
 // import PrivateRoute from "./Pages/LogIn/PrivateRoute/PrivateRoute";
 // import Register from "./Pages/LogIn/Register/Register";
-// import AboutUs from './Pages/AboutUs/AboutUs'
-// import ContactUs from "./Pages/ContactUs/ContactUs";
+import AboutUs from "./Pages/AboutUs/AboutUs"
+import ContactUs from "./Pages/ContactUs/ContactUs";
+import Home from "./Pages/Home";
+import LogIn from "./Pages/LogIn/LogIn/LogIn";
+import Register from "./Pages/LogIn/Register/Register";
+import AuthProvider from "./context/AuthProvider/AuthProvider";
+import Footer from "./Pages/Shared/Footer/Footer";
+// import AuthProvider from "./context/AuthProvider/AuthProvider";
 // import RepairApplication from "./Pages/Home/RepairApplication/RepairApplication";
 // import ApplyService from "./Pages/Services/ApplyService/ApplyService";
 // import AllServices from "./Pages/AllServices/AllServices";
@@ -29,9 +31,8 @@ import Navigation from "./Pages/Shared/Navigation/Navigation";
 function App() {
   return (
     <div>
-      {/* <AuthProvider> */}
+      <AuthProvider>
       <Router>
-        
         <Switch>
 
           <Route exact path="/">
@@ -45,16 +46,17 @@ function App() {
             </Route>
             <Route path="/register">
               <Register></Register>
-            </Route>
-           
+              </Route>
             
-            {/* <Route path="/about-us">
+            
+            
+            <Route path="/about-us">
               <AboutUs></AboutUs>
             </Route>
             <Route path="/contact-us">
               <ContactUs></ContactUs>
             </Route>
-            <Route path="/newsDetails/:newsId">
+            {/* <Route path="/newsDetails/:newsId">
               <NewsDetails></NewsDetails>
             </Route>
 
@@ -83,7 +85,7 @@ function App() {
         </Switch>
         <Footer></Footer>
       </Router>
-      {/* </AuthProvider> */}
+      </AuthProvider>
     </div>
   );
 }

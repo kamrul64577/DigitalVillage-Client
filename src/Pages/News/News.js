@@ -10,52 +10,53 @@ const News = () => {
     return (
         <div>
             {/* News Section  */}
-            <Container>
-                <div className="text-center py-5">
+            <>            
+                <div className="text-center">
                     <h1 className="news-header">Every Single Update From Our Journal</h1>
                     <p className="news-subHeader">Recent News</p>
                 </div>
-                <div className="news-body mb-5">
-                    <CardGroup className="gap-5">
-                        <Card className="news-card">
-                            <Card.Img className="card-img" variant="top" src={news1} />
-                            <Card.Body>
-                                <Card.Title>News Title -$</Card.Title>
-                                <Card.Text>
-                                    This is a wider card with supporting text below as a natural lead-in to
-                                    additional content. This card has even longer content than the first to
-                                    show that equal height action.
-                                </Card.Text>
-                                <Link to="" className="read-more">Read More </Link>
-                            </Card.Body>
-                        </Card>
-                        <Card className="news-card">
-                            <Card.Img className="card-img" variant="top" src={news2} />
-                            <Card.Body>
-                                <Card.Title>News Title -$</Card.Title>
-                                <Card.Text>
-                                    This is a wider card with supporting text below as a natural lead-in to
-                                    additional content. This card has even longer content than the first to
-                                    show that equal height action.
-                                </Card.Text>
-                                <Link to="" className="read-more">Read More </Link>
-                            </Card.Body>
-                        </Card>
-                        <Card className="news-card">
-                            <Card.Img className="card-img" variant="top" src={news3} />
-                            <Card.Body>
-                                <Card.Title>News Title -$</Card.Title>
-                                <Card.Text>
-                                    This is a wider card with supporting text below as a natural lead-in to
-                                    additional content. This card has even longer content than the first to
-                                    show that equal height action.
-                                </Card.Text>
-                                <Link to="" className="read-more">Read More </Link>
-                            </Card.Body>
-                        </Card>
-                    </CardGroup>
-                </div>
-                {/* 
+                <Container>
+                    <div className="news-body mb-5">
+                        <CardGroup className="gap-5">
+                            <Card className="news-card">
+                                <Card.Img className="card-img" variant="top" src={news1} />
+                                <Card.Body>
+                                    <Card.Title>News Title -$</Card.Title>
+                                    <Card.Text>
+                                        This is a wider card with supporting text below as a natural lead-in to
+                                        additional content. This card has even longer content than the first to
+                                        show that equal height action.
+                                    </Card.Text>
+                                    <Link to="" className="read-more">Read More </Link>
+                                </Card.Body>
+                            </Card>
+                            <Card className="news-card">
+                                <Card.Img className="card-img" variant="top" src={news2} />
+                                <Card.Body>
+                                    <Card.Title>News Title -$</Card.Title>
+                                    <Card.Text>
+                                        This is a wider card with supporting text below as a natural lead-in to
+                                        additional content. This card has even longer content than the first to
+                                        show that equal height action.
+                                    </Card.Text>
+                                    <Link to="" className="read-more">Read More </Link>
+                                </Card.Body>
+                            </Card>
+                            <Card className="news-card">
+                                <Card.Img className="card-img" variant="top" src={news3} />
+                                <Card.Body>
+                                    <Card.Title>News Title -$</Card.Title>
+                                    <Card.Text>
+                                        This is a wider card with supporting text below as a natural lead-in to
+                                        additional content. This card has even longer content than the first to
+                                        show that equal height action.
+                                    </Card.Text>
+                                    <Link to="" className="read-more">Read More </Link>
+                                </Card.Body>
+                            </Card>
+                        </CardGroup>
+                    </div>
+                    {/* 
                     <div className="text-center pt-5 w-25">
                         <h1 className="news-header">আপডেট খবর পেতে আমাদের সাথে থাকুন </h1>
                         <p className="news-subHeader">সাম্প্রতিক খবর </p>
@@ -80,7 +81,8 @@ const News = () => {
                         </CardGroup>
                     </div>
                     */}
-            </Container>
+                </Container>
+            </>
         </div>
     );
 };

@@ -11,7 +11,7 @@ import useFirebase from '../../../hooks/useFirebas';
 const Register = () => {
     const [loginData, setLoginData] = useState({});
     const history = useHistory();
-    const { registerUser, isLoading, user, authError } = useFirebase();
+    const { registerUser, isLoading, user, authError } = useAuth();
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;

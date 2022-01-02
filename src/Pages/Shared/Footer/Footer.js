@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 import './Footer.css'
 const Footer = () => {
     return (
-        <div>
-                        <div className="footer">
+        <>
+            <div className="footer">
                 <Container>
                     <Row>
                         <Col lg={3}>
@@ -36,11 +36,11 @@ const Footer = () => {
                                 <li><Link to="#"><i className="fab fa-facebook-messenger"></i></Link></li>
                             </ul>
                         </Col>
-                        <p className="text-center pt-4">Digital Village  &copy;  All Rights Reserved</p>  
+                        <p className="text-center pt-4">Digital Village  &copy;  All Rights Reserved</p>
                     </Row>
                 </Container>
             </div>
-        </div>
+        </>
     );
 };
 

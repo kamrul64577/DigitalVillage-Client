@@ -13,7 +13,7 @@ import './Login.css';
 const LogIn = () => {
 
     const [loginData, setLoginData] = useState({});
-    const { loginUser, user, isLoading, authError } = useFirebase();
+    const { loginUser, user, isLoading, authError } = useAuth();
 
     const location = useLocation();
     const history = useHistory();

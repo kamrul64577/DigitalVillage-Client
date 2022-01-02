@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Request = () => {
     return (
-        <div>
+        <>
             {/* request section */}
             <Container>
                 <Row className="mx-auto" style={{width: '95%'}}>
@@ -17,7 +17,7 @@ const Request = () => {
                     </div>
                 </Row>
             </Container>
-        </div>
+        </>
     );
 };
 
