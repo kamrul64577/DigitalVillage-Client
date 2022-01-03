@@ -38,9 +38,9 @@ import UpdateService from '../Services/ManageServices/UpdateService/UpdateServic
 // import ViewNews from '../ManageNews/ViewNews/ViewNews';
 // import UpdateNews from '../ManageNews/UpdateNews/UpdateNews';
 import ViewEvent from '../Event/ViewEvent/ViewEvent'
-// import RequestForBooking from '../RequestForBooking/RequestForBooking';
+import RequestForBooking from '../RequestForBooking/RequestForBooking';
 // import ViewBooking from '../RequestedBooking/ViewBooking';
-// import MyBooking from '../RequestForBooking/MyBooking';
+import MyBooking from '../RequestForBooking/MyBooking';
 import { Button } from 'muicss/react';
 import BirthRegistration from '../BirthDeathRegistration/BirthRegistration/BirthRegistration';
 // import ViewBirthInfo from '../ViewBirthDeathInfo/ViewBirthInfo/ViewBirthInfo';
@@ -282,15 +282,15 @@ export default function Dashboard() {
                     <ApplicationOfEvent></ApplicationOfEvent>
                 </Route >
 
-                {/* <Route path={`${path}/requestForBooking`}>
+                <Route path={`${path}/requestForBooking`}>
                     <RequestForBooking></RequestForBooking>
-                </Route > */}
+                </Route >
                 {/* <Route path={`${path}/viewBooking`}>
                     <ViewBooking></ViewBooking>
                 </Route > */}
-                {/* <Route path={`${path}/myBooking`}>
+                <Route path={`${path}/myBooking`}>
                     <MyBooking></MyBooking>
-                </Route > */}
+                </Route >
 
 
             </Main>
