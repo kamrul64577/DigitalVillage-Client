@@ -39,7 +39,7 @@ import UpdateService from '../Services/ManageServices/UpdateService/UpdateServic
 // import UpdateNews from '../ManageNews/UpdateNews/UpdateNews';
 import ViewEvent from '../Event/ViewEvent/ViewEvent'
 import RequestForBooking from '../RequestForBooking/RequestForBooking';
-// import ViewBooking from '../RequestedBooking/ViewBooking';
+import ViewBooking from '../RequestedBooking/ViewBooking';
 import MyBooking from '../RequestForBooking/MyBooking';
 import { Button } from 'muicss/react';
 import BirthRegistration from '../BirthDeathRegistration/BirthRegistration/BirthRegistration';
@@ -247,9 +247,9 @@ export default function Dashboard() {
                 <Route path={`${path}/requestedServices`}>
                     <RequestServices></RequestServices>
                 </Route >
-                {/* <Route path={`${path}/requestedRepairing`}>
+                <Route path={`${path}/requestedRepairing`}>
                     <RequestRepairing></RequestRepairing>
-                </Route > */}
+                </Route >
                 <Route path={`${path}/birthRegistration`}>
                     <BirthRegistration></BirthRegistration>
                 </Route >
@@ -285,9 +285,9 @@ export default function Dashboard() {
                 <Route path={`${path}/requestForBooking`}>
                     <RequestForBooking></RequestForBooking>
                 </Route >
-                {/* <Route path={`${path}/viewBooking`}>
+                <Route path={`${path}/viewBooking`}>
                     <ViewBooking></ViewBooking>
-                </Route > */}
+                </Route >
                 <Route path={`${path}/myBooking`}>
                     <MyBooking></MyBooking>
                 </Route >
