@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condense");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Condensed", sans-serif;
+}
+.event-section {
+  width: 100%;
+  height: 80%;
+  overflow-y: hidden;
+  background-image: url(../../../images/EE.jpeg);
+  background-size: cover;
+}
+.event-section .leftBox {
+  width: 50%;
+  height: 100%;
+  float: left;
+  padding: 50px;
+  box-sizing: border-box;
+}
+.event-section .content {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  transition: 0.5s;
+}
+.event-section .leftBox .content:hover {
+  background-color: #e91e63;
+}
+.event-section .leftBox .content h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 50px;
+  text-transform: uppercase;
+}
+.event-section .leftBox .content p {
+  margin: 10px 0 0;
+  padding: 0;
+}
+.event-section .events {
+  float: right;
+  box-sizing: border-box;
+}
+.event-section .events .time {
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100%;
+  float: left;
+  text-align: center;
+  transition: 0.5s;
+}
+.event-section .events:hover .time {
+  color: #fff;
+  background-color: #e91e63;
+}
+.event-section .events .time h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 60px;
+}
+.event-section .events .time h2 span {
+  font-size: 30px;
+}
+.event-section .events .details {
+  /* padding: 20px; */
+  box-sizing: border-box;
+  height: 100%;
+  float: left;
+}
+
+.event-section .events .details h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
+}
+.event-section .events .details p {
+  margin: 10px 0 0;
+  padding: 0;
+  font-size: 16px;
+}
+.event-section .events .details a {
+  color: #e91e63;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 5px 25px;
+  border: 2px solid #e91e63;
+  border-radius: 20px;
+  font-size: 16px;
+  transition: 0.5s;
+}
+.event-section .events .details h6 {
+  margin-block: 12px;
+  font-size: 16px;
+}
+
+.details span {
+  margin-left: 90px;
+  font-size: 14px;
+  color: crimson;
+}
+.event-section .events .details a:hover {
+  background-color: #e91e63;
+  color: #fff;
+}

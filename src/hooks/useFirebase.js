@@ -10,7 +10,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
-    const [userType, setUserType] = useState('');
+    const [userType] = useState('');
     // const [admin, setAdmin] = useState(false);
     // const [journalist, setJournalist] = useState(false);
     const [token, setToken] = useState('');
@@ -32,7 +32,7 @@ const useFirebase = () => {
 
                 // send name to firebase after creation
                 updateProfile(auth.currentUser, {
-                    displayName: name
+                    displayName: name,  photoURL: "https://i.postimg.cc/yx3nsc6K/avatar.png"
                 }).then(() => {
                     // Profile updated!
                     // ...
@@ -50,8 +50,6 @@ const useFirebase = () => {
             })
             .finally(() => setIsLoading(false));
     }
-
-
     // User Login
     const loginUser = (email, password, location, history) => {
         setIsLoading(true)
@@ -68,7 +66,7 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
-    const siginWithGoogle = (location, history) => {
+    const signInWithGoogle = (location, history) => {
         setIsLoading(true)
         signInWithPopup(auth, googleProvider)
             .then((result) => {
@@ -105,12 +103,12 @@ const useFirebase = () => {
 
         return () => unsubcribed;
 
-    }, [])
+    }, [auth])
 
 
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName }
-        fetch('https://shielded-falls-80975.herokuapp.com/?fbclid=IwAR1FF8lEw2wPTmrGRnMN37kzdExjiuEfmvMj04E4QWHkn8EQJeo0xVgtU4g/users', {
+        fetch('https://shielded-falls-80975.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'
@@ -120,11 +118,11 @@ const useFirebase = () => {
             .then()
     }
   
-    useEffect(() => {
-        fetch(`https://shielded-falls-80975.herokuapp.com/?fbclid=IwAR1FF8lEw2wPTmrGRnMN37kzdExjiuEfmvMj04E4QWHkn8EQJeo0xVgtU4g/users/${user.email}`)
-            .then(res => res.json())
-            .then(data => setUserType(data))
-    },[user.email])
+    // useEffect(() => {
+    //     fetch(`https://shielded-falls-80975.herokuapp.com/users/${user.email}`)
+    //         .then(res => res.json())
+    //         .then(data => setUserType(data))
+    // },[user.email])
 
     // useEffect(() => {
     //     fetch(`http://localhost:5000/users/${user.email}`)
@@ -149,7 +147,7 @@ const useFirebase = () => {
         user,
         authError,
         isLoading,
-        siginWithGoogle,
+        signInWithGoogle,
         registerUser,
         loginUser,
         // admin,

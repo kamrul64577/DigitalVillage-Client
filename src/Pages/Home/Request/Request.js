@@ -4,12 +4,11 @@ import { Link } from 'react-router-dom';
 
 const Request = () => {
     return (
-        <div>
+        <>
             {/* request section */}
             <Container>
                 <Row className="mx-auto" style={{width: '95%'}}>
                     <div className="col-8">
-                        {/* <h3 className="repair my-4">আপনার কি নতুন  কিছু  তৈরি  বা মেরামত করা দরকার?</h3> <br /> */}
                         <h3 className="repair my-4 text-end">Do you want to request for any service?</h3>
                     </div>
                     <div className="col-4 my-auto ps-0">
@@ -17,7 +16,7 @@ const Request = () => {
                     </div>
                 </Row>
             </Container>
-        </div>
+        </>
     );
 };
 

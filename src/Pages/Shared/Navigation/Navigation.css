@@ -1,34 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-body {
-    font-family: 'Roboto', sans-serif;
-    background: #fff;
+.signup-button {
+  border: none;
+  padding-inline: 40px;
+  padding-block: 15px;
+  border-radius: 10px 5px 15px 0px;
+  background-color: rgb(219, 25, 25);
+  color: white;
 }
-*{
-    margin: 0;
-    padding: 0;
+.signup-button:hover {
+  background-color: rgba(0, 33, 72);
 }
-.navbar{
-    background-color: #424D83;
+.user img {
+  margin-left: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 40px;
 }
-
-.nav-li{
-    text-decoration: none;
-    color: #C7C1DB;
-    padding: 8px 0px;
-    margin: 0 15px;
-    font-size: 18px;
-    transition: border-bottom 1s;
-}
-.nav-li:hover{
-    color:aliceblue;
-    border-bottom: 2px solid rgb(209, 199, 199);
-}
-
-.nav-li.sign-up{
-    padding: 5px 25px;
-    border: 2px solid green;
-    background: rgb(112, 148, 160);
-    border-radius: 40px;
-    
-}
+/* .dashboard-link{
+  margin-right: 200px;
+} */
