@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';
-import './Event.css'
-import Axios from 'axios'
 import { Link } from 'react-router-dom';
+import './Event.css'
+
 const Event = () => {
     const [events, setEvent] = useState([]);
     useEffect(() => {
-        Axios.get("https://shielded-falls-80975.herokuapp.com/event")
+        fetch("https://shielded-falls-80975.herokuapp.com/event")
             .then(data => {
                 setEvent(data.data)
             })

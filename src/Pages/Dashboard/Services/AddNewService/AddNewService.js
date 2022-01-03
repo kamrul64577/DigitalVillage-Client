@@ -1,20 +1,29 @@
+import axios from 'axios';
 import React, { useState } from 'react';
-import Axios from 'axios';
+
 const AddNewService = () => {
     const [name, setName] = useState('');
     const [categories, setCategories] = useState('');
     const [description, setDescription] = useState('');
-    
+
     const handleAddService = () => {
-        Axios.post('https://shielded-falls-80975.herokuapp.com/?fbclid=IwAR0lqN-HZ2QqYo1LyzoEDVMUvB48WzsR_N6dzbQu9u29LK9Kdgr8GCbgyuw/services', {
+        axios.post('https://shielded-falls-80975.herokuapp.com/services', {
             name: name,
             categories: categories,
-            description:description
+            description: description
         })
-            .then(() => {
-                console.log('succesfully Insert')
+            .then(res => {
+                console.log('successfully insert')
+                // if (res.data.insertedId) {
+                //     Swal.fire(
+                //         'Good job!',
+                //         'Successfully the product is added.!',
+                //         'success'
+                //     )
+                //     reset();
+                // }
             });
-        alert('thank you for Adding new Service ')
+            alert('thank you for Adding new Service ')
     }
 
     return (
@@ -28,8 +37,8 @@ const AddNewService = () => {
                             }} />
                             {/* <label for="name" className="label">name</label> */}
                         </div>
-                        
-                        
+
+
                         <div className="form-group col-lg-12">
                             <input id="Request" className="input-text" type="text" name="type" placeholder="What Kind oF Service" onChange={(e) => {
                                 setCategories(e.target.value)

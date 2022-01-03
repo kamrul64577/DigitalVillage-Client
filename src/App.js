@@ -19,6 +19,7 @@ import Footer from "./Pages/Shared/Footer/Footer";
 import AllServices from "./Pages/AllServices/AllServices";
 import PrivateRoute from "./Pages/LogIn/PrivateRoute/PrivateRoute";
 import Event from "./Pages/Event/Event/Event";
+import AddNewService from "./Pages/Dashboard/Services/AddNewService/AddNewService";
 // import AuthProvider from "./context/AuthProvider/AuthProvider";
 // import RepairApplication from "./Pages/Home/RepairApplication/RepairApplication";
 // import ApplyService from "./Pages/Services/ApplyService/ApplyService";
@@ -55,6 +56,9 @@ function App() {
             </Route>
             <Route path="/contact-us">
               <ContactUs></ContactUs>
+            </Route>
+            <Route path="/add-services">
+              <AddNewService></AddNewService>
             </Route>
             {/* <Route path="/newsDetails/:newsId">
               <NewsDetails></NewsDetails>

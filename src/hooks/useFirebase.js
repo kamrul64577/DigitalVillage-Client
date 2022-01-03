@@ -32,7 +32,7 @@ const useFirebase = () => {
 
                 // send name to firebase after creation
                 updateProfile(auth.currentUser, {
-                    displayName: name,  photoURL: "https://cdn2.iconfinder.com/data/icons/font-awesome/1792/user-512.png"
+                    displayName: name,  photoURL: "https://i.postimg.cc/yx3nsc6K/avatar.png"
                 }).then(() => {
                     // Profile updated!
                     // ...
@@ -50,8 +50,6 @@ const useFirebase = () => {
             })
             .finally(() => setIsLoading(false));
     }
-
-
     // User Login
     const loginUser = (email, password, location, history) => {
         setIsLoading(true)
