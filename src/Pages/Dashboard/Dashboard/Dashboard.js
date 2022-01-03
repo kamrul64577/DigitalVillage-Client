@@ -37,7 +37,7 @@ import AddNewService from '../Services/AddNewService/AddNewService';
 // import AddNews from '../ManageNews/AddNews/AddNews';
 // import ViewNews from '../ManageNews/ViewNews/ViewNews';
 // import UpdateNews from '../ManageNews/UpdateNews/UpdateNews';
-// import ViewEvent from '../Event/ViewEvent/ViewEvent'
+import ViewEvent from '../Event/ViewEvent/ViewEvent'
 // import RequestForBooking from '../RequestForBooking/RequestForBooking';
 // import ViewBooking from '../RequestedBooking/ViewBooking';
 // import MyBooking from '../RequestForBooking/MyBooking';
@@ -272,12 +272,12 @@ export default function Dashboard() {
                     <UpdateNews></UpdateNews>
                 </Route > */}
 
-                {/* <Route path={`${path}/addEvent`}>
+                <Route path={`${path}/addEvent`}>
                     <AddEvent></AddEvent>
                 </Route >
                 <Route path={`${path}/viewEvent`}>
                     <ViewEvent></ViewEvent>
-                </Route > */}
+                </Route >
                 <Route path={`${path}/viewEventRegistration`}>
                     <ApplicationOfEvent></ApplicationOfEvent>
                 </Route >
