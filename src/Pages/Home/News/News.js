@@ -1,90 +1,108 @@
-import React from 'react';
-import { Card, CardGroup, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-
-import news1 from '../../../images/news-1.jpg'
-import news2 from '../../../images/news-2.jpg'
-import news3 from '../../../images/news-3.jpg'
-
+import React from "react";
+import "./News.css";
+import Fade from "react-reveal/Fade";
+import paint from "../../../images/news-2.jpg";
+import recent1 from "../../../images/news-1.jpg";
+import recent2 from "../../../images/news-2.jpg";
+import recent3 from "../../../images/news-3.jpg";
+import recent4 from "../../../images/news-1.jpg";
 const News = () => {
-    return (
-        <div>
-            {/* News Section  */}
-            <>            
-                <div className="text-center">
-                    <h1 className="news-header">Every Single Update From Our Journal</h1>
-                    <p className="news-subHeader">Recent News</p>
-                </div>
-                <Container>
-                    <div className="news-body mb-5">
-                        <CardGroup className="gap-5">
-                            <Card className="news-card">
-                                <Card.Img className="card-img" variant="top" src={news1} />
-                                <Card.Body>
-                                    <Card.Title>News Title -$</Card.Title>
-                                    <Card.Text>
-                                        This is a wider card with supporting text below as a natural lead-in to
-                                        additional content. This card has even longer content than the first to
-                                        show that equal height action.
-                                    </Card.Text>
-                                    <Link to="" className="read-more">Read More </Link>
-                                </Card.Body>
-                            </Card>
-                            <Card className="news-card">
-                                <Card.Img className="card-img" variant="top" src={news2} />
-                                <Card.Body>
-                                    <Card.Title>News Title -$</Card.Title>
-                                    <Card.Text>
-                                        This is a wider card with supporting text below as a natural lead-in to
-                                        additional content. This card has even longer content than the first to
-                                        show that equal height action.
-                                    </Card.Text>
-                                    <Link to="" className="read-more">Read More </Link>
-                                </Card.Body>
-                            </Card>
-                            <Card className="news-card">
-                                <Card.Img className="card-img" variant="top" src={news3} />
-                                <Card.Body>
-                                    <Card.Title>News Title -$</Card.Title>
-                                    <Card.Text>
-                                        This is a wider card with supporting text below as a natural lead-in to
-                                        additional content. This card has even longer content than the first to
-                                        show that equal height action.
-                                    </Card.Text>
-                                    <Link to="" className="read-more">Read More </Link>
-                                </Card.Body>
-                            </Card>
-                        </CardGroup>
-                    </div>
-                    {/* 
-                    <div className="text-center pt-5 w-25">
-                        <h1 className="news-header">আপডেট খবর পেতে আমাদের সাথে থাকুন </h1>
-                        <p className="news-subHeader">সাম্প্রতিক খবর </p>
-                    </div>
-                    <div className="news-body mb-5">
-                        <CardGroup className="gap-5">
-                            {
-                                news.map(ns => 
-                                    <Card className="news-card">
-                                        <Card.Img className="card-img" variant="top" src={ns.image} />
-                                        <Card.Body>
-                                            <Card.Title>{ns.title}</Card.Title>
-                                            <Card.Text>
-                                                {ns.description.slice(1,125)} .......
-                                            </Card.Text>
-                                            <Link to={`/newsDetails/${ns._id}`} className="read-more">আরো পড়ুন  </Link>
-                                        </Card.Body>
-                                    </Card>
-                                    )
-                            }
-                           
-                        </CardGroup>
-                    </div>
-                    */}
-                </Container>
-            </>
+  return (
+    <div className="latest-news-main">
+      <div className="latest-news-text-wrapper">
+        <div className="latest-news-text">
+          <p>Our News</p>
+          <h1>Latest News</h1>
+          <p>
+            Here we have our all latest news. you will get 
+          </p>
         </div>
-    );
+      </div>
+      <div className="latest-news-card-wrapper">
+        <div className="latest-news-card">
+          <Fade left>
+            <div className="card">
+              <img src={paint} className="card-img-top" alt="..." />
+
+              <div className="card-body">
+                <h5>'The village wouldn't have burned if the administration'</h5>
+                <small className="small">3 june 2021</small>
+                <p className="card-text">
+                It was raining from 12 noon on Wednesday in Pirganj, Rangpur. I reached Borokarimpur of 
+
+                </p>
+                <button className="read-more-btn">
+                  Read More <i class="fas fa-angle-double-right"></i>
+                </button>
+              </div>
+            </div>
+          </Fade>
+        </div>
+        <div className="latest-news-card">
+          <div className="card">
+            <img src={recent3} className="card-img-top" alt="..." />
+            <div className="card-body">
+              <h5>Desolate villages face famine in Madagascar drought</h5>
+              <small className="small">3 june 2021</small>
+              <p className="card-text">
+              Nothing to eat, nothing to plant. The last rain in Ifotaka fell in May, for two hours.
+              </p>
+              <button className="read-more-btn">
+                Read More <i class="fas fa-angle-double-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <Fade right>
+          <div className="recent-news-main">
+            <h5 className="mb-4">Rcent News</h5>
+            <div className="recent-news-content">
+              <div className="recent-news d-flex">
+                <div>
+                  <img src={recent1} alt="" />
+                </div>
+                <div className="recent-news-text">
+                  <p>How to protect your damage wall</p>
+                  <small className="small">3 june 2021</small>
+                </div>
+              </div>
+
+              <div className="recent-news d-flex">
+                <div>
+                  <img src={recent2} alt="" />
+                </div>
+                <div className="recent-news-text">
+                  {" "}
+                  <p>How to protect your damage wall</p>
+                  <small className="small">3 june 2021</small>
+                </div>
+              </div>
+
+              <div className="recent-news d-flex">
+                <div>
+                  <img src={recent3} alt="" />
+                </div>
+                <div className="recent-news-text">
+                  <p>How to protect your damage wall</p>
+                  <small className="small">3 june 2021</small>
+                </div>
+              </div>
+
+              <div className="recent-news d-flex">
+                <div>
+                  <img src={recent4} alt="" />
+                </div>
+                <div className="recent-news-text">
+                  <p>How to protect your damage wall</p>
+                  <small className="small">3 june 2021</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Fade>
+      </div>
+    </div>
+  );
 };
 
 export default News;

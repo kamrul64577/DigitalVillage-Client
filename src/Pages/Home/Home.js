@@ -1,5 +1,6 @@
 import React from 'react';
 import Navigation from '../Shared/Navigation/Navigation';
+import Subscribe from '../Subscribe/Subscribe';
 
 
 import Banner from './Banner/Banner';
@@ -14,6 +15,7 @@ const Home = () => {
             <Banner></Banner>
             <Request></Request>
             <News></News>
+            <Subscribe></Subscribe>
             
         </>
     );
