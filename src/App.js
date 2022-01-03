@@ -4,7 +4,7 @@ import {
   Route
 } from "react-router-dom";
 // import AuthProvider from "./context/AuthProvider/AuthProvider";
-// import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
+import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 // import Home from './Pages/Home/Home/Home';
 // import LogIn from "./Pages/LogIn/LogIn/LogIn";
 // import PrivateRoute from "./Pages/LogIn/PrivateRoute/PrivateRoute";
@@ -73,9 +73,9 @@ function App() {
               <NewsDetails></NewsDetails>
             </Route> */}
 
-            {/* <PrivateRoute path="/dashboard">
+            <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
-            </PrivateRoute> */}
+            </PrivateRoute>
             <PrivateRoute path="/event">
               <Event></Event>
             </PrivateRoute>
