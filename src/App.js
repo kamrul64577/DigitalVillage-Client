@@ -4,7 +4,7 @@ import {
   Route
 } from "react-router-dom";
 // import AuthProvider from "./context/AuthProvider/AuthProvider";
-// import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
+import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 // import Home from './Pages/Home/Home/Home';
 // import LogIn from "./Pages/LogIn/LogIn/LogIn";
 // import PrivateRoute from "./Pages/LogIn/PrivateRoute/PrivateRoute";
@@ -21,6 +21,7 @@ import Event from "./Pages/Event/Event/Event";
 import AddNewService from "./Pages/Dashboard/Services/AddNewService/AddNewService";
 import AddEvent from "./Pages/Dashboard/Event/AddEvent/AddEvent";
 import AllServices from "./Pages/AllServices/AllServices";
+import NotFound from "./Pages/NotFound/NotFound";
 
 // import AuthProvider from "./context/AuthProvider/AuthProvider";
 // import RepairApplication from "./Pages/Home/RepairApplication/RepairApplication";
@@ -66,14 +67,14 @@ function App() {
             <Route path="/all-services">
               <AllServices></AllServices>
             </Route>
-            
+
             {/* <Route path="/newsDetails/:newsId">
               <NewsDetails></NewsDetails>
             </Route> */}
 
-            {/* <PrivateRoute path="/dashboard">
+            <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
-            </PrivateRoute> */}
+            </PrivateRoute>
             <PrivateRoute path="/event">
               <Event></Event>
             </PrivateRoute>
@@ -93,6 +94,9 @@ function App() {
             <PrivateRoute path="/date">
               <MaterialUIPickers></MaterialUIPickers>
             </PrivateRoute> */}
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
           </Switch>
           <Footer></Footer>
         </Router>

@@ -18,7 +18,7 @@ const AddEvent = () => {
             event
         })
             .then(() => {
-                toast.success('Message\'s sent successfully.', {
+                toast.success('Event\'s added successfully.', {
                     position: "top-right",
                     autoClose: 5000,
                     hideProgressBar: false,
@@ -45,13 +45,13 @@ const AddEvent = () => {
                                     <div className="col-6">
                                         <div className="mb-3">
                                             <label htmlFor="exampleFormControlInput1" className="form-label">Event Name</label>
-                                            <input type="text" className="form-control" placeholder="Event Name" onChange={handleOnChange} name="eventName" />
+                                            <input required type="text" className="form-control" placeholder="Event Name" onChange={handleOnChange} name="eventName" />
                                         </div>
                                     </div>
                                     <div className="col-6">
                                         <div className="mb-3">
                                             <label htmlFor="exampleFormControlInput1" className="form-label">Event Venue</label>
-                                            <input type="text" className="form-control" placeholder="Event Venue" onChange={handleOnChange} name="eventPlace" />
+                                            <input required type="text" className="form-control" placeholder="Event Venue" onChange={handleOnChange} name="eventPlace" />
                                         </div>
                                     </div>
                                 </div>
@@ -59,25 +59,26 @@ const AddEvent = () => {
                                     <div className="col-6">
                                         <div className="mb-3">
                                             <label htmlFor="exampleFormControlInput1" className="form-label">Event Date</label>
-                                            <input type="text" className="form-control" id="floatingInput" placeholder="Event Date" onChange={handleOnChange} name="eventDate" />
+                                            <input required type="text" className="form-control" id="floatingInput" placeholder="Event Date" onChange={handleOnChange} name="eventDate" />
                                         </div>
                                     </div>
                                     <div className="col-6">
                                         <div className="mb-3">
                                             <label htmlFor="exampleFormControlInput1" className="form-label">Event Month</label>
-                                            <input type="text" className="form-control" id="floatingInput" placeholder="Event Month"
+                                            <input required type="text" className="form-control" id="floatingInput" placeholder="Event Month"
                                                 onChange={handleOnChange} name="eventMonth" />
                                         </div>
                                     </div>
-                                </div>
-                                <div className="mb-3">
-                                    <label htmlFor="exampleFormControlTextarea1" className="form-label">Event description</label>
-                                    <textarea className="form-control" id="floatingInput" placeholder="Event Details" onChange={handleOnChange} name="eventDescription" rows="3"></textarea>
                                 </div>
 
                                 <div className="mb-3">
                                     <label htmlFor="exampleFormControlInput1" className="form-label">Application Fee</label>
                                     <input type="text" className="form-control" d="floatingInput" placeholder="Application Fee" onChange={handleOnChange} name="eventFee" />
+                                </div>
+
+                                <div className="mb-3">
+                                    <label htmlFor="exampleFormControlTextarea1" className="form-label">Event description</label>
+                                    <textarea required className="form-control" id="floatingInput" placeholder="Event Details" onChange={handleOnChange} name="eventDescription" rows="3"></textarea>
                                 </div>
 
                                 <span className="w-50 mx-auto" style={{ display: "block" }}>

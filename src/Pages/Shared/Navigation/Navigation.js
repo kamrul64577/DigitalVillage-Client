@@ -27,7 +27,7 @@ const Navigation = () => {
                             <Nav.Link as={Link} className="ms-1" to="/contact-us">Contact Us</Nav.Link>
                             {/* { !user.email &&   <Nav.Link as={Link} className="text-white fw-bold mx-3 nav-hover" to="/login">Log In</Nav.Link>} */}
 
-                            <Nav.Link as={Link} className="  dashboard-link" to="/dashboard">Dash Board</Nav.Link>
+                            <Nav.Link as={Link} className="  dashboard-link " to="/dashboard">Dash Board</Nav.Link>
 
 
                             {user.email &&
