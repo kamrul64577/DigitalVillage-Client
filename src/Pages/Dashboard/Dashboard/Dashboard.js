@@ -43,9 +43,9 @@ import ViewBooking from '../RequestedBooking/ViewBooking';
 import MyBooking from '../RequestForBooking/MyBooking';
 import { Button } from 'muicss/react';
 import BirthRegistration from '../BirthDeathRegistration/BirthRegistration/BirthRegistration';
-// import ViewBirthInfo from '../ViewBirthDeathInfo/ViewBirthInfo/ViewBirthInfo';
+import ViewBirthInfo from '../ViewBirthDeathInfo/ViewBirthInfo/ViewBirthInfo';
 import DeathRegistration from '../BirthDeathRegistration/DeathRegistration/DeathRegistration';
-// import ViewDeathInfo from '../ViewBirthDeathInfo/ViewDeathInfo/ViewDeathInfo';
+import ViewDeathInfo from '../ViewBirthDeathInfo/ViewDeathInfo/ViewDeathInfo';
 import ApplicationOfEvent from '../Event/ApplicationOfEvent/ApplicationOfEvent';
 const drawerWidth = 260;
 
@@ -256,13 +256,13 @@ export default function Dashboard() {
                 <Route path={`${path}/deathRegistration`}>
                     <DeathRegistration></DeathRegistration>
                 </Route >
-                {/* <Route path={`${path}/viewBirthInfo`}>
+                <Route path={`${path}/viewBirthInfo`}>
                     <ViewBirthInfo></ViewBirthInfo>
-                </Route > */}
-                {/* <Route path={`${path}/viewDeathInfo`}>
+                </Route >
+                <Route path={`${path}/viewDeathInfo`}>
                     <ViewDeathInfo></ViewDeathInfo>
                 </Route >
-                <Route path={`${path}/addNews`}>
+                {/* <Route path={`${path}/addNews`}>
                     <AddNews></AddNews>
                 </Route >
                 <Route path={`${path}/viewNews`}>
@@ -270,14 +270,14 @@ export default function Dashboard() {
                 </Route >
                 <Route path={`${path}/updateNews/:newsId`}>
                     <UpdateNews></UpdateNews>
-                </Route >
+                </Route > */}
 
                 <Route path={`${path}/addEvent`}>
                     <AddEvent></AddEvent>
                 </Route >
                 <Route path={`${path}/viewEvent`}>
                     <ViewEvent></ViewEvent>
-                </Route > */}
+                </Route >
                 <Route path={`${path}/viewEventRegistration`}>
                     <ApplicationOfEvent></ApplicationOfEvent>
                 </Route >
