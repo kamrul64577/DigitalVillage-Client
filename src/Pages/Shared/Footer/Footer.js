@@ -1,45 +1,48 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
 import './Footer.css'
+// import footerImg from '../../../Images/painting-removebg-preview.png'
 const Footer = () => {
     return (
         <>
-            <div className="footer">
-                <Container>
-                    <Row>
-                        <Col lg={3}>
-                            <h4>Digital Village </h4>
-                            <p>Support </p>
-                            <p>Privacy Policy</p>
-                        </Col>
-                        <Col lg={3}>
-                            <h3>Services</h3>
-                            <p>Get help from officer</p>
-                            <p>Process</p>
-                            <p>Essay</p>
-                        </Col>
-                        <Col lg={3}>
-                            <h3>Support</h3>
-                            <p>Real time chat with officer </p>
-                            <p>Emergency Contact</p>
-                            {/* <p>Cookies Policy</p> */}
-                        </Col>
-                        <Col lg={3}>
+            <div className="container">
+                <div className="footer-texts footer-focused">
+                    <h2>Digital Village</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore distinctio eius vitae voluptatibus quidem nisi perferendis modi minima alias iusto.</p>
+                    <p> Emergency Help</p>
+                    <p>Check Up</p>
+                    <p> Personal Diseases</p>
+                </div>
 
-                            <h3>Our Address</h3>
-                            <p>Bashundhara R/A</p>
-                            <p>Dhaka, 1200</p>
-                            <ul className="list-unstyled d-flex">
-                                <li><Link to="#"><i className="fab fa-facebook-f"></i></Link></li>
-                                <li><Link to="#"><i className="fab fa-google-plus-g"></i></Link></li>
-                                <li><Link to="#"><i className="fab fa-facebook-messenger"></i></Link></li>
-                            </ul>
-                        </Col>
-                        <p className="text-center pt-4">Digital Village  &copy;  All Rights Reserved</p>
-                    </Row>
-                </Container>
+
+                <div className="footer-texts">
+                    <h5>Quick Links</h5>
+                    <p> Home</p>
+                    <p>About</p>
+                    <p>Services</p>
+                    <p>contact Us</p>
+                    <p>Check Up</p>
+                </div>
+
+
+                <div className="footer-texts">
+                    <h5>Useful Links</h5>
+                    <p>Emergency Dental Care</p>
+                    <p>Check Up</p>
+                    <p>Request For Services</p>
+                    <p>Help</p>
+                    <p>Check Up</p>
+                </div>
+
+                <div className="footer-texts">
+                    <h5>Work Hours</h5>
+                    <p>Mon - Fri : 09:00 AM - 19:00 AM</p>
+                    <p>Sat - Sun : 08:00 AM - 20:00 AM</p>
+                    <h5>Need For Help? Call Us</h5>
+                    <p className="footer-btn">+2020534603</p>
+                </div>
+
             </div>
+            <p className="text-center">&copy; copyright  2020 all rights reserved</p>
         </>
     );
 };
