@@ -16,7 +16,6 @@ const AllServices = () => {
         <>
             <Navigation></Navigation>
             <div className="service">
-                <h2 className='text-center'>Services {serviceList?.length}</h2>
                 <div className="container ">
                     <div className="row">
                         <h3 className="text-center py-3"> <Link to="/applyService" className="request">Request for new service</Link></h3>
