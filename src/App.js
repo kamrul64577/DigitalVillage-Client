@@ -21,16 +21,12 @@ import Event from "./Pages/Event/Event/Event";
 import AddNewService from "./Pages/Dashboard/Services/AddNewService/AddNewService";
 import AddEvent from "./Pages/Dashboard/Event/AddEvent/AddEvent";
 import AllServices from "./Pages/AllServices/AllServices";
-import Subscribe from "./Pages/Subscribe/Subscribe";
+
 
 // import AuthProvider from "./context/AuthProvider/AuthProvider";
 // import RepairApplication from "./Pages/Home/RepairApplication/RepairApplication";
 // import ApplyService from "./Pages/Services/ApplyService/ApplyService";
-<<<<<<< HEAD
 
-=======
-import AllServices from "./Pages/AllServices/AllServices";
->>>>>>> a5d873f7fdeef15185cfe3535eb86a9726f80a36
 // import RequestServices from "./Pages/Dashboard/Services/RequestServices/RequestServices";
 // import RequestRepairing from "./Pages/Dashboard/RequestedRepairing/RequestedRepairing";
 // import AddNewService from "./Pages/Dashboard/Services/AddNewService/AddNewService";
