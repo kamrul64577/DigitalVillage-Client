@@ -14,11 +14,11 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 import useAuth from '../../../hooks/useAuth';
-// import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
 // import RequestServices from '../Services/RequestServices/RequestServices';
 // import MakeLocalJournalist from '../MakeLocalJournalist/MakeLocalJournalist';
 // import MakeServiceOfficer from '../MakeServiceOfficer/MakeServiceOfficer'
-// import MakeEventCoordinator from '../MakeEventCoordinator/MakeEventCoordinator'
+import MakeEventCoordinator from '../MakeEventCoordinator/MakeEventCoordinator'
 import AddEvent from '../Event/AddEvent/AddEvent'; 
 import {
     BrowserRouter as Router,
@@ -223,16 +223,16 @@ export default function Dashboard() {
                 <Route exact path={`${path}`}>
                     <DashboardHome></DashboardHome>
                 </Route >
-                {/* <Route path={`${path}/makeAdmin`}>
+                <Route path={`${path}/makeAdmin`}>
                     <MakeAdmin></MakeAdmin>
                 </Route >
-                <Route path={`${path}/makeServiceOfficer`}>
+                {/* <Route path={`${path}/makeServiceOfficer`}>
                     <MakeServiceOfficer></MakeServiceOfficer>
-                </Route >
+                </Route > */}
                 <Route path={`${path}/makeEventCoordinator`}>
                     <MakeEventCoordinator></MakeEventCoordinator>
                 </Route >
-                <Route path={`${path}/makeLocalJournalist`}>
+                {/* <Route path={`${path}/makeLocalJournalist`}>
                     <MakeLocalJournalist></MakeLocalJournalist>
                 </Route > */}
                 {/* <Route path={`${path}/addNewService`}>
