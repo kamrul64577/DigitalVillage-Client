@@ -23,7 +23,7 @@ import AddEvent from "./Pages/Dashboard/Event/AddEvent/AddEvent";
 // import AuthProvider from "./context/AuthProvider/AuthProvider";
 // import RepairApplication from "./Pages/Home/RepairApplication/RepairApplication";
 // import ApplyService from "./Pages/Services/ApplyService/ApplyService";
-// import AllServices from "./Pages/AllServices/AllServices";
+import AllServices from "./Pages/AllServices/AllServices";
 // import RequestServices from "./Pages/Dashboard/Services/RequestServices/RequestServices";
 // import RequestRepairing from "./Pages/Dashboard/RequestedRepairing/RequestedRepairing";
 // import AddNewService from "./Pages/Dashboard/Services/AddNewService/AddNewService";
@@ -42,6 +42,9 @@ function App() {
             </Route>
             <Route path="/home">
               <Home></Home>
+            </Route>
+            <Route path="/all-services">
+              <AllServices></AllServices>
             </Route>
             <Route path="/login">
               <LogIn></LogIn>
