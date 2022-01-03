@@ -20,10 +20,13 @@ import PrivateRoute from "./Pages/LogIn/PrivateRoute/PrivateRoute";
 import Event from "./Pages/Event/Event/Event";
 import AddNewService from "./Pages/Dashboard/Services/AddNewService/AddNewService";
 import AddEvent from "./Pages/Dashboard/Event/AddEvent/AddEvent";
+import AllServices from "./Pages/AllServices/AllServices";
+import Subscribe from "./Pages/Subscribe/Subscribe";
+
 // import AuthProvider from "./context/AuthProvider/AuthProvider";
 // import RepairApplication from "./Pages/Home/RepairApplication/RepairApplication";
 // import ApplyService from "./Pages/Services/ApplyService/ApplyService";
-// import AllServices from "./Pages/AllServices/AllServices";
+
 // import RequestServices from "./Pages/Dashboard/Services/RequestServices/RequestServices";
 // import RequestRepairing from "./Pages/Dashboard/RequestedRepairing/RequestedRepairing";
 // import AddNewService from "./Pages/Dashboard/Services/AddNewService/AddNewService";
@@ -58,6 +61,10 @@ function App() {
             <Route path="/add-services">
               <AddNewService></AddNewService>
             </Route>
+            <Route path="/all-services">
+              <AllServices></AllServices>
+            </Route>
+            
             {/* <Route path="/newsDetails/:newsId">
               <NewsDetails></NewsDetails>
             </Route> */}
