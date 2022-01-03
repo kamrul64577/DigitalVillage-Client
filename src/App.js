@@ -6,11 +6,11 @@ import {
 import Home from "./Pages/Home";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Navigation from "./Pages/Shared/Navigation/Navigation";
-// import AuthProvider from "./context/AuthProvider/AuthProvider";
-// import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
+import AuthProvider from "./context/AuthProvider/AuthProvider";
+import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 // import Home from './Pages/Home/Home/Home';
 // import LogIn from "./Pages/LogIn/LogIn/LogIn";
-// import PrivateRoute from "./Pages/LogIn/PrivateRoute/PrivateRoute";
+import PrivateRoute from "./Pages/LogIn/PrivateRoute/PrivateRoute";
 // import Register from "./Pages/LogIn/Register/Register";
 import AboutUs from './Pages/AboutUs/AboutUs'
 import ContactUs from "./Pages/ContactUs/ContactUs";
@@ -27,7 +27,7 @@ import ContactUs from "./Pages/ContactUs/ContactUs";
 function App() {
   return (
     <div>
-      {/* <AuthProvider> */}
+      <AuthProvider>
       <Router>
         
         <Switch>
@@ -54,24 +54,24 @@ function App() {
             </Route>
             {/* <Route path="/newsDetails/:newsId">
               <NewsDetails></NewsDetails>
-            </Route>
+            </Route> */}
 
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
             </PrivateRoute>
-            <PrivateRoute path="/event">
+            {/* <PrivateRoute path="/event">
               <Event></Event>
-            </PrivateRoute>
-            <PrivateRoute path="/repair">
+            </PrivateRoute> */}
+            {/* <PrivateRoute path="/repair">
               <RepairApplication></RepairApplication>
             </PrivateRoute>
             <PrivateRoute path="/applyService">
               <ApplyService></ApplyService>
-            </PrivateRoute>
-            <PrivateRoute path="/services">
+            </PrivateRoute> */}
+            {/* <PrivateRoute path="/services">
               <AllServices></AllServices>
-            </PrivateRoute>
-            <PrivateRoute path="/registerEvent/:eventId">
+            </PrivateRoute> */}
+            {/* <PrivateRoute path="/registerEvent/:eventId">
               <RegisterForEvent></RegisterForEvent>
             </PrivateRoute>
 
@@ -81,7 +81,7 @@ function App() {
         </Switch>
         <Footer></Footer>
       </Router>
-      {/* </AuthProvider> */}
+      </AuthProvider>
     </div>
   );
 }
