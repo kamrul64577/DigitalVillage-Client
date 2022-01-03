@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import eventImg from '../../../../images/E.jpg'
+import { toast, ToastContainer } from 'react-toastify';
+
 const AddEvent = () => {
     const [event, setEvent] = useState({})
     const handleOnChange = e => {
@@ -9,7 +11,6 @@ const AddEvent = () => {
         const newEvent = { ...event }
         newEvent[field] = value;
         setEvent(newEvent);
-
     }
 
     const handleAddEvent = e => {
@@ -17,65 +18,72 @@ const AddEvent = () => {
             event
         })
             .then(() => {
-                console.log('Successfully Insert')
+                toast.success('Message\'s sent successfully.', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    progress: undefined,
+                });
             });
-        alert('Event added successfully')
         e.preventDefault();
+        e.target.reset()
     }
     return (
-        <div>
-            <section className="container-fluid  main-wrapper py-5">
-                <div className="container">
-                    <div className="row d-flex align-items-center rounded-pill bg-white shadow p-5">
-                        <div className="col-md-6 p-0">
-                            <img src={eventImg} alt="Event-img" className="img-fluid rounded-circle" />
-                        </div>
-                        <div className="col-md-6">
-                            <div className="row">
-                                <div className="col-md-12 mb-lg-4 mb-3 px-md-5">
-                                    <h1 className="text-md-start text-center">Add Event</h1>
+        <>
+            <div className="container">
+                <div className="row mt-4">
+                    <div className="col-lg-6 col-md-12 col-sm-12 text-center mt-5 ">
+                        <h3 className="text-center pt-lg-5 pb-3 theme-color d-block d-lg-none">Order your favorite cycle</h3>
+                        <img height="300px" src={eventImg} alt="" className="img-fluid -w75" /><br />
+                    </div>
+                    <div className="col-lg-6 shadow-lg">
+                        <h3 className="text-center pt-5 pb-3 theme-color d-none d-lg-block">Order your favorite cycle</h3>
+                        <div className="text-start px-0 px-lg-5">
+                            <form onSubmit={handleAddEvent} className="px-4 pb-5">
+                                <div className="mb-3">
+                                    <label htmlFor="exampleFormControlInput1" className="form-label">Event Name</label>
+                                    <input type="text" className="form-control" placeholder="Event Name" onChange={handleOnChange} name="eventName" />
                                 </div>
-                                <form onSubmit={handleAddEvent} className="px-md-5 px-2">
-                                    <div className="col-md-12">
-                                        <div className="form-floating mb-3">
-                                            <input type="text" className="form-control rounded-pill" id="floatingInput" placeholder="Event Name" onChange={handleOnChange} name="eventName" />
-                                            <label for="floatingInput">Event Name</label>
-                                        </div>
-                                        <div className="form-floating mb-3">
-                                            <input type="text" className="form-control rounded-pill" id="floatingInput" placeholder="Event Venue" onChange={handleOnChange} name="eventPlace" />
-                                            <label for="floatingInput">Event Venue</label>
-                                        </div>
-                                        <div className="form-floating mb-3">
-                                            <input type="text" className="form-control rounded-pill" id="floatingInput" placeholder="Event Date" onChange={handleOnChange} name="eventDate" />
-                                            <label for="floatingInput">Event Date</label>
-                                        </div>
-                                        <div className="form-floating mb-3">
-                                            <input type="text" className="form-control rounded-pill" id="floatingInput" placeholder="Event Month"
-                                                onChange={handleOnChange} name="eventMonth" />
-                                            <label for="floatingInput">Event Month</label>
-                                        </div>
-                                        <div className="form-floating mb-3">
-                                            <input type="text" className="form-control rounded-pill" id="floatingInput" placeholder="Application Fee" onChange={handleOnChange} name="eventFee" />
-                                            <label for="floatingInput">Application Fee</label>
-                                        </div>
-                                        <div className="form-floating mb-3">
-                                            <input type="text" className="form-control rounded-pill" id="floatingInput" placeholder="Event Details" onChange={handleOnChange} name="eventDescription" />
-                                            <label for="floatingInput">Event Details </label>
-                                        </div>
 
-                                        <div className="submit-btn ">
-                                            <input type="submit" className="btn btn-primary btn-lg" value="Add" />
+                                <div className="mb-3">
+                                    <label htmlFor="exampleFormControlInput1" className="form-label">Event Venue</label>
+                                    <input type="text" className="form-control" placeholder="Event Venue" onChange={handleOnChange} name="eventPlace" />
+                                </div>
 
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+                                <div className="mb-3">
+                                    <label htmlFor="exampleFormControlInput1" className="form-label">Event Date</label>
+                                    <input type="text" className="form-control" id="floatingInput" placeholder="Event Date" onChange={handleOnChange} name="eventDate" />
+                                </div>
+
+                                <div className="mb-3">
+                                    <label htmlFor="exampleFormControlInput1" className="form-label">Event Month</label>
+                                    <input type="text" className="form-control" id="floatingInput" placeholder="Event Month"
+                                        onChange={handleOnChange} name="eventMonth" />
+                                </div>
+
+                                <div className="mb-3">
+                                    <label htmlFor="exampleFormControlTextarea1" className="form-label">Event description</label>
+                                    <textarea className="form-control" id="floatingInput" placeholder="Event Details" onChange={handleOnChange} name="eventDescription" rows="3"></textarea>
+                                </div>
+
+                                <div className="mb-3">
+                                    <label htmlFor="exampleFormControlInput1" className="form-label">Application Fee</label>
+                                    <input type="text" className="form-control" d="floatingInput" placeholder="Application Fee" onChange={handleOnChange} name="eventFee" />
+                                </div>
+
+                                <span className="w-50 mx-auto" style={{ display: "block" }}>
+                                    <input type="submit" className="btn text-light w-100 text-center" value="Order" style={{ backgroundColor: 'red', color: '#fff' }} />
+                                </span>
+                                <ToastContainer
+                                    position="top-right"
+                                />
+                            </form>
                         </div>
                     </div>
                 </div>
-            </section>
-
-        </div>
+            </div>
+        </>
     );
 };
 

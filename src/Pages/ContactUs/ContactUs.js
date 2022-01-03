@@ -2,8 +2,8 @@ import React from 'react'
 
 import emailjs from "emailjs-com";
 import Navigation from '../Shared/Navigation/Navigation';
-// import { toast, ToastContainer} from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import { toast, ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './ContactUs.css'
 
 export default function ContactUs() {
@@ -19,13 +19,13 @@ export default function ContactUs() {
     };
 
     const onButtonClickHandler = () => {
-        // toast.success('Message\'s sent successfully.', {
-        //     position: "top-right",
-        //     autoClose: 5000,
-        //     hideProgressBar: false,
-        //     closeOnClick: true,
-        //     progress: undefined,
-        // });
+        toast.success('Message\'s sent successfully.', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            progress: undefined,
+        });
     };
     return (
         <>
@@ -81,9 +81,9 @@ export default function ContactUs() {
                             <div className="inputBox">
                                 <input onClick={onButtonClickHandler} type="submit" name="" value="Send" />
                             </div>
-                            {/* <ToastContainer
+                            <ToastContainer
                                 position="top-right"
-                            /> */}
+                            />
                         </form>
                     </div>
 

@@ -27,7 +27,7 @@ const Navigation = () => {
                         <Nav className=" ">
                             {user.email &&
                                 <div className="d-flex user my-2">
-                                    <img className="bg-white ms-5" src={user?.photoURL} alt="" />
+                                    <img className="bg-white" src={user?.photoURL} alt="" />
                                     <p className="my-auto ms-2 text-white">{user?.displayName}</p>
                                 </div>
                             }

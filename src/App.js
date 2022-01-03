@@ -11,7 +11,7 @@ import {
 // import Register from "./Pages/LogIn/Register/Register";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import ContactUs from "./Pages/ContactUs/ContactUs";
-import Home from "./Pages/Home";
+import Home from "./Pages/Home/Home"
 import LogIn from "./Pages/LogIn/LogIn/LogIn";
 import Register from "./Pages/LogIn/Register/Register";
 import AuthProvider from "./context/AuthProvider/AuthProvider";

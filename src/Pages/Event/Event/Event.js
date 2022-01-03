@@ -16,28 +16,27 @@ const Event = () => {
     return (
         <div>
             <Navigation></Navigation>
-            {/* {events.map(evnt => evnt.event.eventName)} */}
             <section className="event-section">
-                <div className="container pt-5">
+                <div className="container pt-5 mb-lg-0">
                     <div className="row py-0">
-                        <div className="col-lg-6 content">
+                        <div className="col-lg-6 col-12 content mb-5" style={{height: '350px'}}>
                             <h1>Information About Event</h1>
                             <p> Here you will get all the information about event</p>
                             <p>Event description is given and interested people can apply for different events. You have to apply 2 days before the date of the event.</p>
                             <p>Click on the Apply button on the right, fill out the form and participate in the event.</p>
                         </div>
-                        <div className="col-lg-6">
+                        <div className="col-lg-6 col-12">
                             {
                                 events.map(evnt =>
-                                    <div className="card events" style={{ maxWidth: '540px'}}>
+                                    <div className="card events border border-0 my-2" key={evnt._id} style={{ maxWidth: '540px', backgroundColor: 'rgba(255, 255, 255, 0.58)'}}>
                                         <div className="row g-0 align-items-center justify-content-center">
-                                            <div className="col-md-4 py-5 text-center time">
-                                                <h2>{evnt?.event?.eventDate}<br /><span>{evnt.event.eventMonth}</span></h2>
+                                            <div className="col-md-4 col-12 py-3 py-lg-5 text-center time">
+                                                <h2>{evnt.event.eventDate}<br /><span>{evnt.event.eventMonth}</span></h2>
                                             </div>
-                                            <div className="col-md-8">
+                                            <div className="col-md-8 col-12">
                                                 <div className="card-body details">
-                                                    <h4 className="card-title">{evnt?.event?.eventName}</h4>
-                                                    <p className="card-text">{evnt?.event?.eventDescription}</p>
+                                                    <h4 className="card-title">{evnt.event.eventName}</h4>
+                                                    <p className="card-text">{evnt.event.eventDescription}</p>
                                                     <h6>{evnt?.event?.eventPlace}</h6>
                                                     <Link to={`/registerEvent/${evnt._id}`}>Apply</Link>
                                                     <span>Apply fee:{evnt.event.eventFee}Taka</span>
