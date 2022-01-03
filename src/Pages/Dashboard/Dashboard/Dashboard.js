@@ -34,9 +34,9 @@ import AddNewService from '../Services/AddNewService/AddNewService';
 import ViewServices from '../Services/ManageServices/ViewServices/ViewServices';
 import RequestRepairing from '../RequestedRepairing/RequestedRepairing';
 import UpdateService from '../Services/ManageServices/UpdateService/UpdateService';
-// import AddNews from '../ManageNews/AddNews/AddNews';
-// import ViewNews from '../ManageNews/ViewNews/ViewNews';
-// import UpdateNews from '../ManageNews/UpdateNews/UpdateNews';
+import AddNews from '../ManageNews/AddNews/AddNews';
+import ViewNews from '../ManageNews/ViewNews/ViewNews';
+import UpdateNews from '../ManageNews/UpdateNews/UpdateNews';
 import ViewEvent from '../Event/ViewEvent/ViewEvent'
 import RequestForBooking from '../RequestForBooking/RequestForBooking';
 import ViewBooking from '../RequestedBooking/ViewBooking';
@@ -262,7 +262,7 @@ export default function Dashboard() {
                 <Route path={`${path}/viewDeathInfo`}>
                     <ViewDeathInfo></ViewDeathInfo>
                 </Route >
-                {/* <Route path={`${path}/addNews`}>
+                <Route path={`${path}/addNews`}>
                     <AddNews></AddNews>
                 </Route >
                 <Route path={`${path}/viewNews`}>
@@ -270,7 +270,7 @@ export default function Dashboard() {
                 </Route >
                 <Route path={`${path}/updateNews/:newsId`}>
                     <UpdateNews></UpdateNews>
-                </Route > */}
+                </Route >
 
                 <Route path={`${path}/addEvent`}>
                     <AddEvent></AddEvent>
