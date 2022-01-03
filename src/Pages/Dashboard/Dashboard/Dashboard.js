@@ -15,7 +15,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 import useAuth from '../../../hooks/useAuth';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
-// import RequestServices from '../Services/RequestServices/RequestServices';
+import RequestServices from '../Services/RequestServices/RequestServices';
 import MakeLocalJournalist from '../MakeLocalJournalist/MakeLocalJournalist';
 import MakeServiceOfficer from '../MakeServiceOfficer/MakeServiceOfficer'
 import MakeEventCoordinator from '../MakeEventCoordinator/MakeEventCoordinator'
@@ -31,9 +31,9 @@ import {
 import DashboardHome from '../DashboardHome/DashboardHome';
 import AddNewService from '../Services/AddNewService/AddNewService';
 // import AllServices from '../../AllServices/AllServices';
-// import ViewServices from '../Services/ManageServices/ViewServices/ViewServices';
-// import RequestRepairing from '../RequestedRepairing/RequestedRepairing';
-// import UpdateService from '../Services/ManageServices/UpdateService/UpdateService';
+import ViewServices from '../Services/ManageServices/ViewServices/ViewServices';
+import RequestRepairing from '../RequestedRepairing/RequestedRepairing';
+import UpdateService from '../Services/ManageServices/UpdateService/UpdateService';
 // import AddNews from '../ManageNews/AddNews/AddNews';
 // import ViewNews from '../ManageNews/ViewNews/ViewNews';
 // import UpdateNews from '../ManageNews/UpdateNews/UpdateNews';
@@ -235,18 +235,18 @@ export default function Dashboard() {
                 <Route path={`${path}/makeLocalJournalist`}>
                     <MakeLocalJournalist></MakeLocalJournalist>
                 </Route >
-                {/* <Route path={`${path}/addNewService`}>
+                <Route path={`${path}/addNewService`}>
                     <AddNewService></AddNewService>
-                </Route > */}
-                {/* <Route path={`${path}/viewServices`}>
+                </Route >
+                <Route path={`${path}/viewServices`}>
                     <ViewServices></ViewServices>
-                </Route > */}
-                {/* <Route path={`${path}/updateService/:serviceId`}>
+                </Route >
+                <Route path={`${path}/updateService/:serviceId`}>
                     <UpdateService></UpdateService>
-                </Route > */}
-                {/* <Route path={`${path}/requestedServices`}>
+                </Route >
+                <Route path={`${path}/requestedServices`}>
                     <RequestServices></RequestServices>
-                </Route > */}
+                </Route >
                 {/* <Route path={`${path}/requestedRepairing`}>
                     <RequestRepairing></RequestRepairing>
                 </Route > */}
