@@ -17,7 +17,7 @@ import useAuth from '../../../hooks/useAuth';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 // import RequestServices from '../Services/RequestServices/RequestServices';
 import MakeLocalJournalist from '../MakeLocalJournalist/MakeLocalJournalist';
-// import MakeServiceOfficer from '../MakeServiceOfficer/MakeServiceOfficer'
+import MakeServiceOfficer from '../MakeServiceOfficer/MakeServiceOfficer'
 import MakeEventCoordinator from '../MakeEventCoordinator/MakeEventCoordinator'
 import AddEvent from '../Event/AddEvent/AddEvent'; 
 import {
@@ -226,9 +226,9 @@ export default function Dashboard() {
                 <Route path={`${path}/makeAdmin`}>
                     <MakeAdmin></MakeAdmin>
                 </Route >
-                {/* <Route path={`${path}/makeServiceOfficer`}>
+                <Route path={`${path}/makeServiceOfficer`}>
                     <MakeServiceOfficer></MakeServiceOfficer>
-                </Route > */}
+                </Route >
                 <Route path={`${path}/makeEventCoordinator`}>
                     <MakeEventCoordinator></MakeEventCoordinator>
                 </Route >
