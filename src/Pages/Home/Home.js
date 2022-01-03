@@ -1,4 +1,5 @@
 import React from 'react';
+import AboutRoute from '../AboutRoute/AboutRoute';
 import Navigation from '../Shared/Navigation/Navigation';
 import Subscribe from '../Subscribe/Subscribe';
 import Banner from './Banner/Banner';
@@ -12,6 +13,7 @@ const Home = () => {
             <Navigation></Navigation>
             <Banner></Banner>
             <Request></Request>
+            <AboutRoute></AboutRoute>
             <News></News>
             <Subscribe></Subscribe>
         </>
