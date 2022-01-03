@@ -16,10 +16,10 @@ import LogIn from "./Pages/LogIn/LogIn/LogIn";
 import Register from "./Pages/LogIn/Register/Register";
 import AuthProvider from "./context/AuthProvider/AuthProvider";
 import Footer from "./Pages/Shared/Footer/Footer";
-import AllServices from "./Pages/AllServices/AllServices";
 import PrivateRoute from "./Pages/LogIn/PrivateRoute/PrivateRoute";
 import Event from "./Pages/Event/Event/Event";
 import AddNewService from "./Pages/Dashboard/Services/AddNewService/AddNewService";
+import AddEvent from "./Pages/Dashboard/Event/AddEvent/AddEvent";
 // import AuthProvider from "./context/AuthProvider/AuthProvider";
 // import RepairApplication from "./Pages/Home/RepairApplication/RepairApplication";
 // import ApplyService from "./Pages/Services/ApplyService/ApplyService";
@@ -36,9 +36,7 @@ function App() {
     <div>
       <AuthProvider>
         <Router>
-
           <Switch>
-
             <Route exact path="/">
               <Home></Home>
             </Route>
@@ -76,8 +74,8 @@ function App() {
             <PrivateRoute path="/applyService">
               <ApplyService></ApplyService>
             </PrivateRoute> */}
-            <Route path="/all-services">
-              <AllServices></AllServices>
+            <Route path="/add-event">
+              <AddEvent></AddEvent>
             </Route>
             {/* <PrivateRoute path="/registerEvent/:eventId">
               <RegisterForEvent></RegisterForEvent>

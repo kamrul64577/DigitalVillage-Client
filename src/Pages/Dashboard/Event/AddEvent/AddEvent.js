@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import axios from 'axios';
 import React, { useState } from 'react';
 import eventImg from '../../../../images/E.jpg'
 const AddEvent = () => {
@@ -13,11 +13,11 @@ const AddEvent = () => {
     }
 
     const handleAddEvent = e => {
-        Axios.post('https://shielded-falls-80975.herokuapp.com/?fbclid=IwAR0lqN-HZ2QqYo1LyzoEDVMUvB48WzsR_N6dzbQu9u29LK9Kdgr8GCbgyuw/event', {
+        axios.post('https://shielded-falls-80975.herokuapp.com/event', {
             event
         })
             .then(() => {
-                console.log('succesfully Insert')
+                console.log('Successfully Insert')
             });
         alert('Event added successfully')
         e.preventDefault();
