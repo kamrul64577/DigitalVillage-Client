@@ -11,7 +11,7 @@ import {
 // import Register from "./Pages/LogIn/Register/Register";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import ContactUs from "./Pages/ContactUs/ContactUs";
-
+import Home from "./Pages/Home/Home"
 import LogIn from "./Pages/LogIn/LogIn/LogIn";
 import Register from "./Pages/LogIn/Register/Register";
 import AuthProvider from "./context/AuthProvider/AuthProvider";
@@ -21,7 +21,6 @@ import Event from "./Pages/Event/Event/Event";
 import AddNewService from "./Pages/Dashboard/Services/AddNewService/AddNewService";
 import AddEvent from "./Pages/Dashboard/Event/AddEvent/AddEvent";
 import AllServices from "./Pages/AllServices/AllServices";
-import Home from "./Pages/Home/Home";
 
 // import AuthProvider from "./context/AuthProvider/AuthProvider";
 // import RepairApplication from "./Pages/Home/RepairApplication/RepairApplication";
@@ -45,6 +44,9 @@ function App() {
             </Route>
             <Route path="/home">
               <Home></Home>
+            </Route>
+            <Route path="/all-services">
+              <AllServices></AllServices>
             </Route>
             <Route path="/login">
               <LogIn></LogIn>
