@@ -16,7 +16,7 @@ const Footer = () => {
 
                 <div className="footer-texts">
                     <h5>Quick Links</h5>
-                    <p> Home</p>
+                    <p>Home</p>
                     <p>About</p>
                     <p>Services</p>
                     <p>contact Us</p>
