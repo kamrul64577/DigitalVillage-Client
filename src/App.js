@@ -9,9 +9,9 @@ import Navigation from "./Pages/Shared/Navigation/Navigation";
 import AuthProvider from "./context/AuthProvider/AuthProvider";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 // import Home from './Pages/Home/Home/Home';
-// import LogIn from "./Pages/LogIn/LogIn/LogIn";
+import LogIn from "./Pages/LogIn/LogIn/LogIn";
 import PrivateRoute from "./Pages/LogIn/PrivateRoute/PrivateRoute";
-// import Register from "./Pages/LogIn/Register/Register";
+import Register from "./Pages/LogIn/Register/Register";
 import AboutUs from './Pages/AboutUs/AboutUs'
 import ContactUs from "./Pages/ContactUs/ContactUs";
 // import RepairApplication from "./Pages/Home/RepairApplication/RepairApplication";
@@ -38,12 +38,12 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
-          {/* <Route path="/login">
+          <Route path="/login">
               <LogIn></LogIn>
             </Route>
             <Route path="/register">
               <Register></Register>
-            </Route> */}
+            </Route>
             
             
             <Route path="/about-us">
