@@ -37,11 +37,11 @@ const AddNewService = () => {
             <div className="container">
                 <div className="row mt-4 align-items-center">
                     <div className="col-lg-6 col-md-12 col-sm-12 text-center mt-5 ">
-                        <h3 className="text-center pt-lg-5 pb-3 theme-color d-block d-lg-none">Add event</h3>
+                        <h3 className="text-center pt-lg-5 pb-3 theme-color d-block d-lg-none">Add service</h3>
                         <img height="300px" src={serviceImg} alt="" className="img-fluid -w75" /><br />
                     </div>
                     <div className="col-lg-6 mt-lg-0 mt-3 container-fluid">
-                        <h3 className="text-center pt-5 pb-3 theme-color d-none d-lg-block">Add event</h3>
+                        <h3 className="text-center pt-5 pb-3 theme-color d-none d-lg-block">Add service</h3>
                         <div className="text-start px-0 px-lg-3">
                             <form onSubmit={handleAddService} className="px-4 pb-5">
                                 <div className="mb-3">
