@@ -43,7 +43,7 @@ const Navigation = () => {
                                 user.email ?
                                     <Link to="/home">  <button onClick={logoutWithAlart} className="signup-button ms-5">Log Out</button></Link>
                                     :
-                                    <Link to="/signup"> <button className="signup-button ">Sign Up</button></Link>
+                                    <Link to="/register"> <button className="signup-button ">Sign Up</button></Link>
                             }
 
                             {/* { !admin &&  <h4 className="ms-4"><i className="fas fa-cart-plus"> {myBookingData?.length}</i></h4>} */}

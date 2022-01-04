@@ -7,7 +7,7 @@ const UpdateService = () => {
     const [services, setServices] = useState({});
 
     useEffect(() => {
-        const url = `https://shielded-falls-80975.herokuapp.com/?fbclid=IwAR1FF8lEw2wPTmrGRnMN37kzdExjiuEfmvMj04E4QWHkn8EQJeo0xVgtU4g/services/${serviceId}`;
+        const url = `https://shielded-falls-80975.herokuapp.com/services/${serviceId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setServices(data))
@@ -34,7 +34,7 @@ const UpdateService = () => {
     }
 
     const handleUpdateService = e => {
-        const url = `https://shielded-falls-80975.herokuapp.com/?fbclid=IwAR1FF8lEw2wPTmrGRnMN37kzdExjiuEfmvMj04E4QWHkn8EQJeo0xVgtU4g/services/${serviceId}`;
+        const url = `https://shielded-falls-80975.herokuapp.com/services/${serviceId}`;
         fetch(url, {
             method: 'PUT',
             headers: {

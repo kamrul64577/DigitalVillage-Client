@@ -7,7 +7,7 @@ const UpdateNews = () => {
     const [news, setNews] = useState({});
 
     useEffect(() => {
-        const url = `https://shielded-falls-80975.herokuapp.com/?fbclid=IwAR1FF8lEw2wPTmrGRnMN37kzdExjiuEfmvMj04E4QWHkn8EQJeo0xVgtU4g/news/${newsId}`;
+        const url = `https://shielded-falls-80975.herokuapp.com/news/${newsId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setNews(data))
@@ -34,7 +34,7 @@ const UpdateNews = () => {
     }
 
     const handleUpdateNews = e => {
-        const url = `https://shielded-falls-80975.herokuapp.com/?fbclid=IwAR1FF8lEw2wPTmrGRnMN37kzdExjiuEfmvMj04E4QWHkn8EQJeo0xVgtU4g/news/${newsId}`;
+        const url = `https://shielded-falls-80975.herokuapp.com/news/${newsId}`;
         fetch(url, {
             method: 'PUT',
             headers: {

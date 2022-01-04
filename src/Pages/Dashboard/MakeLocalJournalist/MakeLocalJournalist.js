@@ -12,7 +12,7 @@ const MakeLocalJournalist = () => {
     const handleJournalistSubmit = e => {
         const user = { email };
 
-        fetch('https://shielded-falls-80975.herokuapp.com/?fbclid=IwAR1FF8lEw2wPTmrGRnMN37kzdExjiuEfmvMj04E4QWHkn8EQJeo0xVgtU4g/users/localJournalist', {
+        fetch('https://shielded-falls-80975.herokuapp.com/users/localJournalist', {
             method: 'PUT',
             headers: {
 

@@ -19,7 +19,7 @@ const DeathRegistration = () => {
     }
 
     const handleAddDeath = e => {
-        Axios.post('https://shielded-falls-80975.herokuapp.com/?fbclid=IwAR1FF8lEw2wPTmrGRnMN37kzdExjiuEfmvMj04E4QWHkn8EQJeo0xVgtU4g/death', {
+        Axios.post('https://shielded-falls-80975.herokuapp.com/death', {
             deathInfo,
             value
 

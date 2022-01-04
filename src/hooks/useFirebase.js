@@ -8,10 +8,9 @@ initializeFirebase();
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
-    const [admin, setAdmin] = useState(false)
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
-    const [userType, ] = useState('');
+    const [userType,setUserType ] = useState('');
     // const [admin, setAdmin] = useState(false);
     // const [journalist, setJournalist] = useState(false);
     const [token, setToken] = useState('');
@@ -119,11 +118,11 @@ const useFirebase = () => {
             .then()
     }
   
-    // useEffect(() => {
-    //     fetch(`https://shielded-falls-80975.herokuapp.com/users/${user.email}`)
-    //         .then(res => res.json())
-    //         .then(data => setUserType(data))
-    // },[user.email])
+    useEffect(() => {
+        fetch(`https://shielded-falls-80975.herokuapp.com/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => setUserType(data))
+    },[user.email])
 
     // useEffect(() => {
     //     fetch(`http://localhost:5000/users/${user.email}`)
