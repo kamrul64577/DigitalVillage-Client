@@ -123,7 +123,7 @@ const useFirebase = () => {
             .then(res => res.json())
             .then(data => setUserType(data))
             .catch((e) => {})
-    },[user.email])     
+    },[user.email])
 
     // User Logout
     const logOut = () => {
