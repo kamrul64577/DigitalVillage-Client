@@ -130,7 +130,7 @@ export default function Dashboard() {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h5" noWrap component="div">
-                        Welcome to the Dasboard
+                        Welcome to the Dashboard
                     </Typography>
                 </Toolbar>
             </AppBar>
