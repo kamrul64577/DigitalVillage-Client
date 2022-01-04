@@ -9,7 +9,7 @@ import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 // import LogIn from "./Pages/LogIn/LogIn/LogIn";
 // import PrivateRoute from "./Pages/LogIn/PrivateRoute/PrivateRoute";
 // import Register from "./Pages/LogIn/Register/Register";
-import AboutUs from "./Pages/AboutUs/AboutUs";
+
 import ContactUs from "./Pages/ContactUs/ContactUs";
 import Home from "./Pages/Home/Home"
 import LogIn from "./Pages/LogIn/LogIn/LogIn";
@@ -55,9 +55,7 @@ function App() {
             <Route path="/register">
               <Register></Register>
             </Route>
-            <Route path="/about-us">
-              <AboutUs></AboutUs>
-            </Route>
+            
             <Route path="/contact-us">
               <ContactUs></ContactUs>
             </Route>

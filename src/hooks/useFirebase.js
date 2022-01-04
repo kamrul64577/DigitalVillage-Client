@@ -8,9 +8,10 @@ initializeFirebase();
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
+    const [admin, setAdmin] = useState(false)
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
-    const [userType] = useState('');
+    const [userType, ] = useState('');
     // const [admin, setAdmin] = useState(false);
     // const [journalist, setJournalist] = useState(false);
     const [token, setToken] = useState('');
@@ -130,6 +131,8 @@ const useFirebase = () => {
     //         .then(data => setJournalist(data.journalist))
     // }, [user.email])
 
+
+ 
 
     // User Logout
     const logOut = () => {

@@ -8,7 +8,7 @@ const NotFound = () => {
             <div className="row">
                 <img src={NotFoundPic} alt="" style={{ height: '100vh' }} />
             </div>
-            <Footer></Footer>
+            
         </div>
     );
 };
