@@ -15,10 +15,10 @@ const Subscribe = () => {
                   eiusmod tempor incididunt ut labore et dolore.
                 </p>
               </div>
-              <div class="input-group mb-3 subscribe-input">
+              <div className="input-group mb-3 subscribe-input">
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Put your email"
                   aria-label="Recipient's username"
                   aria-describedby="button-addon2"

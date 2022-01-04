@@ -5,7 +5,7 @@ const ViewBooking = () => {
     const [booking, setBooking] = useState([]);
 
     useEffect(() => {
-        fetch(`https://shielded-falls-80975.herokuapp.com/?fbclid=IwAR1FF8lEw2wPTmrGRnMN37kzdExjiuEfmvMj04E4QWHkn8EQJeo0xVgtU4g/booking`)
+        fetch(`https://shielded-falls-80975.herokuapp.com/booking`)
             .then(res => res.json())
             .then(data => setBooking(data))
     }, [booking]);
@@ -18,7 +18,7 @@ const ViewBooking = () => {
         }
         modifiedStatus.push(booking);
         const modifiedStatusProducts = { id, updateStatus };
-        fetch('https://shielded-falls-80975.herokuapp.com/?fbclid=IwAR1FF8lEw2wPTmrGRnMN37kzdExjiuEfmvMj04E4QWHkn8EQJeo0xVgtU4g/booking', {
+        fetch('https://shielded-falls-80975.herokuapp.com/booking', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -36,7 +36,7 @@ const ViewBooking = () => {
     const handleDeleteBooking = id => {
         const proceed = window.confirm('Are you sure want to delete');
         if (proceed) {
-            const url = `https://shielded-falls-80975.herokuapp.com/?fbclid=IwAR1FF8lEw2wPTmrGRnMN37kzdExjiuEfmvMj04E4QWHkn8EQJeo0xVgtU4g/booking/${id}`;
+            const url = `https://shielded-falls-80975.herokuapp.com/booking/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

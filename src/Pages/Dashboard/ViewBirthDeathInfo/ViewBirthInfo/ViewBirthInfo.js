@@ -6,7 +6,7 @@ const ViewBirthInfo = () => {
     const [birth, setBirth] = useState([]);
 
     useEffect(() => {
-        fetch(`https://shielded-falls-80975.herokuapp.com/?fbclid=IwAR1FF8lEw2wPTmrGRnMN37kzdExjiuEfmvMj04E4QWHkn8EQJeo0xVgtU4g/birth`)
+        fetch(`https://shielded-falls-80975.herokuapp.com/birth`)
             .then(res => res.json())
             .then(data => setBirth(data))
     }, []);
@@ -14,14 +14,14 @@ console.log(birth);
     const handleDeleteBirth = id => {
         const proceed = window.confirm('Are you sure want to delete');
         if (proceed) {
-            const url = `https://shielded-falls-80975.herokuapp.com/?fbclid=IwAR1FF8lEw2wPTmrGRnMN37kzdExjiuEfmvMj04E4QWHkn8EQJeo0xVgtU4g/birth/${id}`;
+            const url = `https://shielded-falls-80975.herokuapp.com/birth/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        alert('succesfully deleted');
+                        alert('Successfully deleted');
                         const remainingbirth = birth.filter(birth => birth._id !== id);
                         setBirth(remainingbirth);
                     }

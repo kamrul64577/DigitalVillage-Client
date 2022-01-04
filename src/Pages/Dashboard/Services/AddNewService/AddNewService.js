@@ -5,18 +5,17 @@ import { toast, ToastContainer } from 'react-toastify';
 
 const AddNewService = () => {
     const [name, setName] = useState('');
-    const [service, setService] = useState('');
     const [categories, setCategories] = useState('');
     const [description, setDescription] = useState('');
-    const handleOnChange = e => {
-        const field = e.target.name;
-        const value = e.target.value;
-        const newService = { ...service }
-        newService[field] = value;
-        setService(newService);
-    }
+    // const handleOnChange = e => {
+    //     const field = e.target.name;
+    //     const value = e.target.value;
+    //     const newService = { ...service }
+    //     newService[field] = value;
+    //     setService(newService);
+    // }
 
-    const handleAddService = () => {
+    const handleAddService = (e) => {
         axios.post('https://shielded-falls-80975.herokuapp.com/services', {
             name: name,
             categories: categories,
@@ -31,6 +30,7 @@ const AddNewService = () => {
                     progress: undefined,
                 });
             });
+            e.preventDefault();
     }
     return (
         <>
@@ -48,19 +48,21 @@ const AddNewService = () => {
                                     <label htmlFor="exampleFormControlInput1" className="form-label">Service Name</label>
                                     <input required type="text" className="form-control" placeholder="Service Name" name="name" onChange={(e) => {
                                         setName(e.target.value)
-                                    }} />
+                                    }}  />
                                 </div>
-
+                               
                                 <div className="mb-3">
                                     <label htmlFor="exampleFormControlInput1" className="form-label">Service Category</label>
                                     <input required type="text" id="Request" className="form-control" name="type" placeholder="What Kind oF Service" onChange={(e) => {
-                                        setName(e.target.value)
-                                    }} />
+                                        setCategories(e.target.value)
+                                    }}  />
                                 </div>
 
                                 <div className="mb-3">
-                                    <label htmlFor="exampleFormControlTextarea1" className="form-label">Event description</label>
-                                    <textarea required className="form-control" id="floatingInput" name="whyNeed" placeholder="Description of Service?" onChange={handleOnChange} rows="3"></textarea>
+                                    <label htmlFor="exampleFormControlTextarea1" className="form-label">Service description</label>
+                                    <textarea required className="form-control" id="floatingInput" name="whyNeed" placeholder="Description of Service?" onChange={(e) => {
+                                        setDescription(e.target.value)
+                                    }}  rows="3"></textarea>
                                 </div>
 
                                 <span className="w-50 mx-auto" style={{ display: "block" }}>

@@ -47,6 +47,7 @@ import ViewBirthInfo from '../ViewBirthDeathInfo/ViewBirthInfo/ViewBirthInfo';
 import DeathRegistration from '../BirthDeathRegistration/DeathRegistration/DeathRegistration';
 import ViewDeathInfo from '../ViewBirthDeathInfo/ViewDeathInfo/ViewDeathInfo';
 import ApplicationOfEvent from '../Event/ApplicationOfEvent/ApplicationOfEvent';
+import AddReview from '../Review/AddReview/AddReview';
 const drawerWidth = 260;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
@@ -163,6 +164,7 @@ export default function Dashboard() {
                             <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/myBooking`}>My Booking Information</Link> <br />
                             <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/birthRegistration`}>Register Birth</Link> <br />
                             <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/deathRegistration`}>Register Death</Link> <br />
+                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/addReview`}>Add Review</Link> <br />
                         </Box>
                    }
                     {
@@ -236,6 +238,11 @@ export default function Dashboard() {
                 <Route path={`${path}/makeAdmin`}>
                     <MakeAdmin></MakeAdmin>
                 </Route >
+                <Route path={`${path}/addReview`}>
+                    <AddReview></AddReview>
+                </Route >
+
+
                 <Route path={`${path}/makeServiceOfficer`}>
                     <MakeServiceOfficer></MakeServiceOfficer>
                 </Route >

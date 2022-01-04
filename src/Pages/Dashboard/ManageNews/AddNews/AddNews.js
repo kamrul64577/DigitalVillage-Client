@@ -6,7 +6,7 @@ const AddNews = () => {
     const [description, setDescription] = useState('');
 
     const handleAddNews = e => {
-        Axios.post('https://shielded-falls-80975.herokuapp.com/?fbclid=IwAR1FF8lEw2wPTmrGRnMN37kzdExjiuEfmvMj04E4QWHkn8EQJeo0xVgtU4g/insertNews', {
+        Axios.post('https://shielded-falls-80975.herokuapp.com/insertNews', {
             title,
             image,
             description

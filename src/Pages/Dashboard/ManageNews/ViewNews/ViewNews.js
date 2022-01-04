@@ -1,4 +1,3 @@
-import Button from '@restart/ui/esm/Button';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -6,7 +5,7 @@ const ViewNews = () => {
     const [news, setNews] = useState([]);
 
     useEffect(() => {
-        fetch(`https://shielded-falls-80975.herokuapp.com/?fbclid=IwAR1FF8lEw2wPTmrGRnMN37kzdExjiuEfmvMj04E4QWHkn8EQJeo0xVgtU4g/News`)
+        fetch(`https://shielded-falls-80975.herokuapp.com/News`)
             .then(res => res.json())
             .then(data => setNews(data))
     }, []);
@@ -14,7 +13,7 @@ const ViewNews = () => {
     const handleDeleteNews = id => {
         const proceed = window.confirm('Are you sure want to delete');
         if (proceed) {
-            const url = `https://shielded-falls-80975.herokuapp.com/?fbclid=IwAR1FF8lEw2wPTmrGRnMN37kzdExjiuEfmvMj04E4QWHkn8EQJeo0xVgtU4g/news/${id}`;
+            const url = `https://shielded-falls-80975.herokuapp.com/news/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

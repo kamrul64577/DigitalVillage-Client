@@ -1,12 +1,11 @@
-import Button from '@restart/ui/esm/Button';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const ViewDeathInfo = () => {
     const [death, setDeath] = useState([]);
 
     useEffect(() => {
-        fetch(`https://shielded-falls-80975.herokuapp.com/?fbclid=IwAR1FF8lEw2wPTmrGRnMN37kzdExjiuEfmvMj04E4QWHkn8EQJeo0xVgtU4g/death`)
+        fetch(`https://shielded-falls-80975.herokuapp.com/death`)
             .then(res => res.json())
             .then(data => setDeath(data))
     }, []);
@@ -14,7 +13,7 @@ const ViewDeathInfo = () => {
     const handleDeleteDeath = id => {
         const proceed = window.confirm('Are you sure want to delete');
         if (proceed) {
-            const url = `https://shielded-falls-80975.herokuapp.com/?fbclid=IwAR1FF8lEw2wPTmrGRnMN37kzdExjiuEfmvMj04E4QWHkn8EQJeo0xVgtU4g/death/${id}`;
+            const url = `https://shielded-falls-80975.herokuapp.com/death/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

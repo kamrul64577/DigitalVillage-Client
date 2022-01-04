@@ -12,7 +12,7 @@ const MakeEventCoordinator = () => {
     const handleAdminSubmit = e => {
         const user = { email };
 
-        fetch('https://shielded-falls-80975.herokuapp.com/?fbclid=IwAR1FF8lEw2wPTmrGRnMN37kzdExjiuEfmvMj04E4QWHkn8EQJeo0xVgtU4g/users/eventCoordinator', {
+        fetch('https://shielded-falls-80975.herokuapp.com/users/eventCoordinator', {
             method: 'PUT',
             headers: {
 

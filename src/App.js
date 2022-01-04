@@ -9,7 +9,7 @@ import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 // import LogIn from "./Pages/LogIn/LogIn/LogIn";
 // import PrivateRoute from "./Pages/LogIn/PrivateRoute/PrivateRoute";
 // import Register from "./Pages/LogIn/Register/Register";
-import AboutUs from "./Pages/AboutUs/AboutUs";
+
 import ContactUs from "./Pages/ContactUs/ContactUs";
 import Home from "./Pages/Home/Home"
 import LogIn from "./Pages/LogIn/LogIn/LogIn";
@@ -22,7 +22,6 @@ import AddNewService from "./Pages/Dashboard/Services/AddNewService/AddNewServic
 import AddEvent from "./Pages/Dashboard/Event/AddEvent/AddEvent";
 import AllServices from "./Pages/AllServices/AllServices";
 import NotFound from "./Pages/NotFound/NotFound";
-
 
 // import AuthProvider from "./context/AuthProvider/AuthProvider";
 // import RepairApplication from "./Pages/Home/RepairApplication/RepairApplication";
@@ -44,27 +43,35 @@ function App() {
             <Route exact path="/">
               <Home></Home>
             </Route>
+
             <Route path="/home">
               <Home></Home>
             </Route>
+
             <Route path="/all-services">
               <AllServices></AllServices>
             </Route>
+
             <Route path="/login">
               <LogIn></LogIn>
             </Route>
+
+            <Route path="/signup">
+              <Register></Register>
+            </Route>
+
             <Route path="/register">
               <Register></Register>
             </Route>
-            <Route path="/about-us">
-              <AboutUs></AboutUs>
-            </Route>
+            
             <Route path="/contact-us">
               <ContactUs></ContactUs>
             </Route>
+
             <Route path="/add-services">
               <AddNewService></AddNewService>
             </Route>
+
             <Route path="/all-services">
               <AllServices></AllServices>
             </Route>
@@ -76,6 +83,7 @@ function App() {
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
             </PrivateRoute>
+
             <PrivateRoute path="/event">
               <Event></Event>
             </PrivateRoute>
@@ -85,9 +93,11 @@ function App() {
             <PrivateRoute path="/applyService">
               <ApplyService></ApplyService>
             </PrivateRoute> */}
+
             <Route path="/add-event">
               <AddEvent></AddEvent>
             </Route>
+
             {/* <PrivateRoute path="/registerEvent/:eventId">
               <RegisterForEvent></RegisterForEvent>
             </PrivateRoute>
@@ -95,6 +105,7 @@ function App() {
             <PrivateRoute path="/date">
               <MaterialUIPickers></MaterialUIPickers>
             </PrivateRoute> */}
+            
             <Route path="*">
               <NotFound></NotFound>
             </Route>

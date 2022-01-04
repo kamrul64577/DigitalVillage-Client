@@ -21,13 +21,13 @@ const Navigation = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className=" ms-auto mt-3">
                             <Nav.Link as={Link} className="me-1" to="/home">Home</Nav.Link>
-                            <Nav.Link as={Link} className="mx-1" to="/about-us">About Us</Nav.Link>
+                           
                             <Nav.Link as={Link} className="mx-1" to="/all-services">Services</Nav.Link>
                             <Nav.Link as={Link} className="mx-1" to="/event">Sports Event</Nav.Link>
                             <Nav.Link as={Link} className="ms-1" to="/contact-us">Contact Us</Nav.Link>
                             {/* { !user.email &&   <Nav.Link as={Link} className="text-white fw-bold mx-3 nav-hover" to="/login">Log In</Nav.Link>} */}
 
-                            <Nav.Link as={Link} className="  dashboard-link" to="/dashboard">Dash Board</Nav.Link>
+                            <Nav.Link as={Link} className="  dashboard-link " to="/dashboard">Dash Board</Nav.Link>
 
 
                             {user.email &&
@@ -41,7 +41,7 @@ const Navigation = () => {
 
                             {
                                 user.email ?
-                                    <Link to="/signup">  <button onClick={logoutWithAlart} className="signup-button ms-5">Log Out</button></Link>
+                                    <Link to="/home">  <button onClick={logoutWithAlart} className="signup-button ms-5">Log Out</button></Link>
                                     :
                                     <Link to="/signup"> <button className="signup-button ">Sign Up</button></Link>
                             }

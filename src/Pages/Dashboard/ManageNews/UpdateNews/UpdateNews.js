@@ -1,17 +1,17 @@
 import { Button, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import Textarea from 'muicss/lib/react/textarea';
+
 const UpdateNews = () => {
     const { newsId } = useParams();
     const [news, setNews] = useState({});
 
     useEffect(() => {
-        const url = `https://shielded-falls-80975.herokuapp.com/?fbclid=IwAR1FF8lEw2wPTmrGRnMN37kzdExjiuEfmvMj04E4QWHkn8EQJeo0xVgtU4g/news/${newsId}`;
+        const url = `https://shielded-falls-80975.herokuapp.com/news/${newsId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setNews(data))
-    }, []);
+    }, [newsId]);
 
 
 
@@ -34,7 +34,7 @@ const UpdateNews = () => {
     }
 
     const handleUpdateNews = e => {
-        const url = `https://shielded-falls-80975.herokuapp.com/?fbclid=IwAR1FF8lEw2wPTmrGRnMN37kzdExjiuEfmvMj04E4QWHkn8EQJeo0xVgtU4g/news/${newsId}`;
+        const url = `https://shielded-falls-80975.herokuapp.com/news/${newsId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
