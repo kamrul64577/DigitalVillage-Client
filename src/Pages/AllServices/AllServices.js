@@ -19,7 +19,7 @@ const AllServices = () => {
                 <div className="row">
                     {
                         serviceList.map((service) =>
-                            <div className="col-lg-6 col-12">
+                            <div className="col-lg-4 col-12" key={service._id}>
                                 <div className="card border mb-3 h-100" >
                                     <div className="card-header">{service.categories}</div>
                                     <div className="card-body">

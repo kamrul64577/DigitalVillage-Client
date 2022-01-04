@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto+Condense");
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condense');
 body {
   margin: 0;
   padding: 0;
@@ -37,12 +37,10 @@ body {
   margin: 10px 0 0;
   padding: 0;
 }
-.event-section .events {
-  float: right;
+/* .event-section .events {
   box-sizing: border-box;
-}
+} */
 .event-section .events .time {
-  padding: 20px;
   box-sizing: border-box;
   height: 100%;
   float: left;
@@ -94,7 +92,7 @@ body {
   font-size: 16px;
 }
 
-.details span {
+.details .event-fee {
   margin-left: 90px;
   font-size: 14px;
   color: crimson;
