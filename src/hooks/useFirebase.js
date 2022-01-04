@@ -122,8 +122,8 @@ const useFirebase = () => {
         fetch(`https://shielded-falls-80975.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setUserType(data))
-    },[user.email])
-     
+            .catch((e) => {})
+    },[user.email])     
 
     // User Logout
     const logOut = () => {

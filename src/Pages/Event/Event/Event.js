@@ -23,33 +23,13 @@ const Event = () => {
                         <p className="text-center text-light">Event description is given and interested people can apply for different events. You have to apply 2 days before the date of the event.</p>
                         <p className="text-center text-light">Click on the Apply button on the right, fill out the form and participate in the event.</p>
                     </div>
-                    {/* {
-                        events.map(evnt =>
-                            <div className="card events border border-0 my-2" key={evnt._id} style={{ backgroundColor: 'rgba(255, 255, 255, 0.58)' }}>
-                                <div className="row g-0 align-items-center justify-content-center">
-                                    <div className="col-md-4 col-12 py-3 py-lg-5 text-center time">
-                                        <h2>{evnt.event.eventDate}<br /><span>{evnt.event.eventMonth}</span></h2>
-                                    </div>
-                                    <div className="col-md-8 col-12">
-                                        <div className="card-body details">
-                                            <h4 className="card-title">{evnt.event.eventName}</h4>
-                                            <p className="card-text">{evnt.event.eventDescription}</p>
-                                            <h6>{evnt?.event?.eventPlace}</h6>
-                                            <Link to={`/registerEvent/${evnt._id}`}>Apply</Link>
-                                            <span>Apply fee:{evnt.event.eventFee}Taka</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        )
-                    } */}
                     <div className="row align-items-center">
                         {
                             events.map(evnt =>
                                 <div className="col-lg-6 col-12" key={evnt._id}>
                                     <div class="card border border-0 w-100 events mb-3 h-100" style={{backgroundColor: 'rgba(255, 255, 255, 0.58)'}}>
                                         <div class="row align-items-center justify-content-center border border-0 g-0" key={evnt._id}>
-                                            <div class="col-md-4 h-100 py-5 time">
+                                            <div class="col-md-4 h-100 py-lg-5 py-4 time">
                                                 <h2>{evnt.event.eventDate}<br /><span>{evnt.event.eventMonth}</span></h2>
                                             </div>
                                             <div class="col-md-8">
