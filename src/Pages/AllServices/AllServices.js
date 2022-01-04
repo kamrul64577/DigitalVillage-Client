@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Navigation from '../Shared/Navigation/Navigation'
 import { Link } from 'react-router-dom';
-import { Col, Row } from 'react-bootstrap';
 // import { Axios } from 'axios';
 
 const AllServices = () => {
@@ -15,24 +14,22 @@ const AllServices = () => {
     return (
         <>
             <Navigation></Navigation>
-            <div className="service">
-                <h3 className="text-center py-3"> <Link to="/applyService" className="request" style={{ textDecoration: 'none' }}>Request for new service</Link></h3>
-                <div className="container ">
-                    <div className="row">
-                        <div className="col-lg-4 col-12">
-                            {
-                                serviceList.map((service) =>
-
-                                    <div className="card border-light mb-3" style={{ maxWidth: '18rem' }}>
-                                        <div className="card-header">{service.categories}</div>
-                                        <div className="card-body">
-                                            <h5 className="card-title">{service.name}</h5>
-                                            <p className="card-text">{service.description}</p>
-                                        </div>
-                                    </div>)
-                            }
-                        </div>
-                    </div>
+            <h3 className="text-center py-3"> <Link to="/applyService" className="request" style={{ textDecoration: 'none' }}>Request for new service</Link></h3>
+            <div className="container ">
+                <div className="row">
+                    {
+                        serviceList.map((service) =>
+                            <div className="col-lg-6 col-12">
+                                <div className="card border mb-3 h-100" >
+                                    <div className="card-header">{service.categories}</div>
+                                    <div className="card-body">
+                                        <h5 className="card-title">{service.name}</h5>
+                                        <p className="card-text">{service.description}</p>
+                                        <button variant="success" className="btn btn-success m-2">Request for this service</button>
+                                    </div>
+                                </div>
+                            </div>)
+                    }
                 </div>
             </div>
         </>
