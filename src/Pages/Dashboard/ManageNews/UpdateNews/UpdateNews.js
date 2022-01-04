@@ -1,7 +1,7 @@
 import { Button, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import Textarea from 'muicss/lib/react/textarea';
+
 const UpdateNews = () => {
     const { newsId } = useParams();
     const [news, setNews] = useState({});
@@ -11,7 +11,7 @@ const UpdateNews = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setNews(data))
-    }, []);
+    }, [newsId]);
 
 
 

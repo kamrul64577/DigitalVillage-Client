@@ -1,7 +1,6 @@
 import { Alert, Button, TextField } from '@mui/material';
 import React, { useState } from 'react';
 
-
 const MakeServiceOfficer = () => {
     const [email, setEmail] = useState('');
     const [success, setSuccess] = useState(false);
@@ -41,7 +40,7 @@ const MakeServiceOfficer = () => {
 
                     sx={{ width: '75%', m: 1 }}
                     onBlur={handleOnBlur}
-                    label="ইমেইল "
+                    label="Email"
                     name="email"
                     type="email"
                     variant="standard"
@@ -49,8 +48,7 @@ const MakeServiceOfficer = () => {
                 <Button type="submit" variant="contained">Add Service Officer</Button>
             </form>
             {
-                success && <Alert severity="success">Sucessfully Add Service Officer</Alert>
-
+                success && <Alert severity="success">Successfully Add Service Officer</Alert>
             }
         </div>
     );

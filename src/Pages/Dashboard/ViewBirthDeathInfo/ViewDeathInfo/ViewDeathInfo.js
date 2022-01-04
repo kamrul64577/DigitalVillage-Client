@@ -1,6 +1,5 @@
-import Button from '@restart/ui/esm/Button';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const ViewDeathInfo = () => {
     const [death, setDeath] = useState([]);

@@ -43,15 +43,23 @@ function App() {
             <Route exact path="/">
               <Home></Home>
             </Route>
+
             <Route path="/home">
               <Home></Home>
             </Route>
+
             <Route path="/all-services">
               <AllServices></AllServices>
             </Route>
+
             <Route path="/login">
               <LogIn></LogIn>
             </Route>
+
+            <Route path="/signup">
+              <Register></Register>
+            </Route>
+
             <Route path="/register">
               <Register></Register>
             </Route>
@@ -59,9 +67,11 @@ function App() {
             <Route path="/contact-us">
               <ContactUs></ContactUs>
             </Route>
+
             <Route path="/add-services">
               <AddNewService></AddNewService>
             </Route>
+
             <Route path="/all-services">
               <AllServices></AllServices>
             </Route>
@@ -73,6 +83,7 @@ function App() {
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
             </PrivateRoute>
+
             <PrivateRoute path="/event">
               <Event></Event>
             </PrivateRoute>
@@ -82,9 +93,11 @@ function App() {
             <PrivateRoute path="/applyService">
               <ApplyService></ApplyService>
             </PrivateRoute> */}
+
             <Route path="/add-event">
               <AddEvent></AddEvent>
             </Route>
+
             {/* <PrivateRoute path="/registerEvent/:eventId">
               <RegisterForEvent></RegisterForEvent>
             </PrivateRoute>
@@ -92,6 +105,7 @@ function App() {
             <PrivateRoute path="/date">
               <MaterialUIPickers></MaterialUIPickers>
             </PrivateRoute> */}
+            
             <Route path="*">
               <NotFound></NotFound>
             </Route>

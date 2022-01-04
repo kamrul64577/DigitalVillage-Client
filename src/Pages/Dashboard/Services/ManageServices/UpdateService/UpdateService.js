@@ -34,7 +34,7 @@ const UpdateService = () => {
     }
 
     const handleUpdateService = e => {
-        const url = `https://shielded-falls-80975.herokuapp.com/services/${serviceId}`;
+        const url = `https://shielded-falls-80975.herokuapp.com/${serviceId}`;
         fetch(url, {
             method: 'PUT',
             headers: {

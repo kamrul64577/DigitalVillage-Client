@@ -9,30 +9,26 @@ import recent4 from "../../../images/news-1.jpg";
 const News = () => {
   return (
     <div className="latest-news-main">
-      <div className="latest-news-text-wrapper">
-        <div className="latest-news-text">
-          <p>Our News</p>
-          <h1>Latest News</h1>
-          <p>
+      <div className="">
+        <p className="text-center">Our News</p>
+        <h1 className="text-center">Latest News</h1>
+        <p className="text-center">
+          Here we have our all latest news. you will get
             Here we have our all latest news. you will get 
-          </p>
-        </div>
+          Here we have our all latest news. you will get
+        </p>
       </div>
       <div className="latest-news-card-wrapper">
         <div className="latest-news-card">
           <Fade left>
             <div className="card">
-              <img src={paint} className="card-img-top" alt="..." />
-
+              <img src={paint} className="card-img-top img-fluid" alt="..." />
               <div className="card-body">
                 <h5>'The village wouldn't have burned if the administration'</h5>
                 <small className="small">3 june 2021</small>
-                <p className="card-text">
-                It was raining from 12 noon on Wednesday in Pirganj, Rangpur. I reached Borokarimpur of 
-
-                </p>
+                <p className="card-text">It was raining from 12 noon on Wednesday in Pirganj, Rangpur. I reached Borokarimpur of</p>
                 <button className="read-more-btn">
-                  Read More <i class="fas fa-angle-double-right"></i>
+                  Read More <i className="fas fa-angle-double-right"></i>
                 </button>
               </div>
             </div>
@@ -45,10 +41,10 @@ const News = () => {
               <h5>Desolate villages face famine in Madagascar drought</h5>
               <small className="small">3 june 2021</small>
               <p className="card-text">
-              Nothing to eat, nothing to plant. The last rain in Ifotaka fell in May, for two hours.
+                Nothing to eat, nothing to plant. The last rain in Ifotaka fell in May, for two hours.
               </p>
               <button className="read-more-btn">
-                Read More <i class="fas fa-angle-double-right"></i>
+                Read More <i className="fas fa-angle-double-right"></i>
               </button>
             </div>
           </div>

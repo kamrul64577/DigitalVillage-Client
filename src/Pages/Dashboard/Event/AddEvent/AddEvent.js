@@ -82,7 +82,7 @@ const AddEvent = () => {
                                 </div>
 
                                 <span className="w-50 mx-auto" style={{ display: "block" }}>
-                                    <input type="submit" className="btn text-light w-100 text-center" value="Order" style={{ backgroundColor: 'red', color: '#fff' }} />
+                                    <input type="submit" className="btn text-light w-100 text-center" value="Order" style={{ backgroundColor: '#1976d2', color: '#fff' }} />
                                 </span>
                                 <ToastContainer
                                     position="top-right"

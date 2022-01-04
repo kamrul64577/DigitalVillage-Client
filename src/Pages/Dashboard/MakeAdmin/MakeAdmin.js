@@ -28,9 +28,6 @@ const MakeAdmin = () => {
                 }
 
             })
-
-
-
         e.preventDefault();
     }
     return (

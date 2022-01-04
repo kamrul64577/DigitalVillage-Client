@@ -18,7 +18,7 @@ const RegisterForEvent = () => {
     const mobileRef = useRef('');
     const dateRef = useRef('');
 
-    
+
     console.log(booking);
     const handleBooking = e => {
         // const name = nameRef.current.value;
@@ -30,7 +30,8 @@ const RegisterForEvent = () => {
         const date = dateRef.current.value;
 
         const newRegister = {
-            hallName: hall, date: date, name: name, email: email, address: address, mobile: mobile, status: 'Pending'}
+            hallName: hall, date: date, name: name, email: email, address: address, mobile: mobile, status: 'Pending'
+        }
 
         fetch(`https://shielded-falls-80975.herokuapp.com/booking`, {
             method: "POST",
@@ -63,7 +64,7 @@ const RegisterForEvent = () => {
                     <form onSubmit={handleBooking} className="text-center mt-4">
                         {/* <input type="text" className="form-control" defaultValue={event._id || ''} ref={idRef} /> */}
                         {/* <input type="text" className="form-control" placeholder="Your Name" ref={nameRef}  /> */}
-                        <input type="text" className="form-control" placeholder="Hall name " ref={hallRef}  />
+                        <input type="text" className="form-control" placeholder="Hall name " ref={hallRef} />
                         <input type="text" className="form-control" defaultValue={user.displayName || ''} ref={userNameRef} />
                         <input type="text" className="form-control" placeholder="Booking Date " ref={dateRef} />
                         <input type="email" className="form-control" defaultValue={user.email || ''} ref={emailRef} />

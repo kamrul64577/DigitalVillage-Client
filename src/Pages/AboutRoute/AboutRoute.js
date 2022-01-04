@@ -24,7 +24,7 @@ const AboutRoute = () => {
                 <div>
                   <h5 className="fw-bolder">
                     {" "}
-                    <i class="fas fa-paint-roller"></i> Professional Painting
+                    <i className="fas fa-paint-roller"></i> Professional Painting
                     Company
                   </h5>
                   <p>
@@ -37,7 +37,7 @@ const AboutRoute = () => {
                 <div>{/* //icon */}</div>
                 <div>
                   <h5 className="fw-bolder">
-                    <i class="fas fa-brush"></i> Better Wallpapering Solution
+                    <i className="fas fa-brush"></i> Better Wallpapering Solution
                   </h5>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed

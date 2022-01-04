@@ -21,7 +21,7 @@ console.log(birth);
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        alert('succesfully deleted');
+                        alert('Successfully deleted');
                         const remainingbirth = birth.filter(birth => birth._id !== id);
                         setBirth(remainingbirth);
                     }

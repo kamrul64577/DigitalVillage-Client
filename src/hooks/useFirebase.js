@@ -10,7 +10,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
-    const [userType,setUserType ] = useState('');
+    const [userType, setUserType ] = useState('');
     // const [admin, setAdmin] = useState(false);
     // const [journalist, setJournalist] = useState(false);
     const [token, setToken] = useState('');
@@ -123,15 +123,7 @@ const useFirebase = () => {
             .then(res => res.json())
             .then(data => setUserType(data))
     },[user.email])
-
-    // useEffect(() => {
-    //     fetch(`http://localhost:5000/users/${user.email}`)
-    //         .then(res => res.json())
-    //         .then(data => setJournalist(data.journalist))
-    // }, [user.email])
-
-
- 
+     
 
     // User Logout
     const logOut = () => {
