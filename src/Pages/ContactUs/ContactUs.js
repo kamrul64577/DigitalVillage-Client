@@ -35,35 +35,35 @@ export default function ContactUs() {
                     <h2>Contact Us </h2>
                     <p>Welcome To Our Contact Page</p>
                 </div>
-                <div className="container">
-                    <div className="contactInfo">
+                <div className="contact-us row">
+                    <div className="contactInfo col-lg-6">
                         <div className="box">
                             <div className="icon"><i className="fa fa-map-marker" aria-hidden="true"></i></div>
                             <div className="text">
-                                <h3 className="line-hieght">Address</h3>
-                                <p className="line-hieght">Mirpur-14<br />Dhaka<br />1206</p>
-                                <p className="line-hieght">Uttra ,Sector-10<br />Dhaka<br />1206</p>
+                                <h3 className="line-height">Address</h3>
+                                <p className="line-height">Mirpur-14<br />Dhaka<br />1206</p>
+                                <p className="line-height">Uttra ,Sector-10<br />Dhaka<br />1206</p>
                             </div>
                         </div>
                         <div className="box">
                             <div className="icon"><i className="fa fa-phone"></i></div>
                             <div className="text">
-                                <h3 className="line-hieght">Mobile Number</h3>
-                                <p className="line-hieght">01780557601</p>
-                                <p className="line-hieght">01709032647</p>
+                                <h3 className="line-height">Mobile Number</h3>
+                                <p className="line-height">01780557601</p>
+                                <p className="line-height">01709032647</p>
                             </div>
                         </div>
                         <div className="box">
                             <div className="icon"><i className="fa fa-envelope-o"></i></div>
                             <div className="text">
-                                <h3 className="line-hieght">Email</h3>
-                                <p className="line-hieght">Kamrulneubcse@gmail.com</p>
-                                <p className="line-hieght">vrafiun@gmail.com</p>
+                                <h3 className="line-height">Email</h3>
+                                <p className="line-height">Kamrulneubcse@gmail.com</p>
+                                <p className="line-height">vrafiun@gmail.com</p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="contactForm mt-5">
+                    <div className="contactForm mt-5 col-lg-6">
                         <form onSubmit={sendEmail} >
                             <h2>Sent Message </h2>
                             <div className="inputBox">

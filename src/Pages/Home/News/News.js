@@ -24,9 +24,9 @@ const News = () => {
             <div className="card">
               <img src={paint} className="card-img-top img-fluid" alt="..." />
               <div className="card-body">
-                <h5>'The village wouldn't have burned if the administration'</h5>
-                <small className="small">3 june 2021</small>
-                <p className="card-text">It was raining from 12 noon on Wednesday in Pirganj, Rangpur. I reached Borokarimpur of</p>
+                <h5>The village wouldn't have burned if the administration reached in time</h5>
+                <small className="small">1st January 2022</small>
+                <p className="card-text">Most of the families of the 20 affected households asked why the police took so much</p>
                 <button className="read-more-btn">
                   Read More <i className="fas fa-angle-double-right"></i>
                 </button>
@@ -38,11 +38,9 @@ const News = () => {
           <div className="card">
             <img src={recent3} className="card-img-top" alt="..." />
             <div className="card-body">
-              <h5>Desolate villages face famine in Madagascar drought</h5>
-              <small className="small">3 june 2021</small>
-              <p className="card-text">
-                Nothing to eat, nothing to plant. The last rain in Ifotaka fell in May, for two hours.
-              </p>
+              <h5>Closure of Bangladesh-India borders devastates villagers</h5>
+              <small className="small">28th December 2021</small>
+              <p className="card-text">The closure of borders along Bangladesh and India due to the Covid 19 pandemic has led to</p>
               <button className="read-more-btn">
                 Read More <i className="fas fa-angle-double-right"></i>
               </button>
@@ -58,7 +56,7 @@ const News = () => {
                   <img src={recent1} alt="" />
                 </div>
                 <div className="recent-news-text">
-                  <p>How to protect your damage wall</p>
+                  <p>Lockdown in 7 villages of Chuadanga</p>
                   <small className="small">3 june 2021</small>
                 </div>
               </div>
