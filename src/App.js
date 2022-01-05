@@ -24,6 +24,7 @@ import AllServices from "./Pages/AllServices/AllServices";
 import NotFound from "./Pages/NotFound/NotFound";
 import ServiceBooking from "./Pages/AllServices/ServiceBooking/ServiceBooking";
 import RegisterForEvent from "./Pages/Event/RegisterForEvent/RegisterForEvent";
+import RepairApplication from "./Pages/RepairApplication/RepairApplication";
 
 // import AuthProvider from "./context/AuthProvider/AuthProvider";
 // import RepairApplication from "./Pages/Home/RepairApplication/RepairApplication";
@@ -89,10 +90,10 @@ function App() {
             <PrivateRoute path="/event">
               <Event></Event>
             </PrivateRoute>
-            {/* <PrivateRoute path="/repair">
+            <PrivateRoute path="/repair">
               <RepairApplication></RepairApplication>
             </PrivateRoute>
-            <PrivateRoute path="/applyService">
+            {/* <PrivateRoute path="/applyService">
               <ApplyService></ApplyService>
             </PrivateRoute> */}
 

@@ -5,7 +5,7 @@ import Navigation from '../Shared/Navigation/Navigation';
 import Subscribe from '../Subscribe/Subscribe';
 import Banner from './Banner/Banner';
 import News from './News/News';
-import Request from './Request/Request';
+
 
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
         <>
             <Navigation></Navigation>
             <Banner></Banner>
-            <Request></Request>
+            
             <AboutRoute></AboutRoute>
             <Review></Review>
             <News></News>

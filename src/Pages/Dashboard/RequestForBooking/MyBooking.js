@@ -15,7 +15,7 @@ const MyBooking = () => {
 
     return (
         <div>
-            <h1 className="text-center pb-2">My Bookings </h1>
+            <h1 className="text-center pb-2">My Hall Booking </h1>
             <div className="service-page">
                 <div className="container py-5 p-3 ">
 

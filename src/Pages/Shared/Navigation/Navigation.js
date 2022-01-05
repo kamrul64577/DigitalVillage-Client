@@ -24,10 +24,12 @@ const Navigation = () => {
                            
                             <Nav.Link as={Link} className="mx-1" to="/all-services">Services</Nav.Link>
                             <Nav.Link as={Link} className="mx-1" to="/event">Sports Event</Nav.Link>
+                            <Nav.Link as={Link} className="mx-1" to="/repair">Apply for Repairing</Nav.Link>
+                            <Nav.Link as={Link} className="  dashboard-link " to="/dashboard">Dashboard</Nav.Link>
                             <Nav.Link as={Link} className="ms-1" to="/contact-us">Contact Us</Nav.Link>
-                            {/* { !user.email &&   <Nav.Link as={Link} className="text-white fw-bold mx-3 nav-hover" to="/login">Log In</Nav.Link>} */}
+                            {/* { !user.email &&   <Nav.Link as={Link} className="text-white fw-bold  nav-hover" to="/login">Log In</Nav.Link>} */}
 
-                            <Nav.Link as={Link} className="  dashboard-link " to="/dashboard">Dash Board</Nav.Link>
+                            
 
 
                             {user.email &&

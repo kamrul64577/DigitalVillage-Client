@@ -6,9 +6,9 @@ import useAuth from '../../../../hooks/useAuth';
 const MyEvents = () => {
     const [event, setEvent] = useState([]);
     
-  const {user} =useAuth();
+  const {user} = useAuth();
     useEffect(()=>{
-        fetch(`https://shielded-falls-80975.herokuapp.com/myEvent/${user?.email}`)
+        fetch(`https://shielded-falls-80975.herokuapp.com/myEvents/${user?.email}`)
         .then(res => res.json())
         .then(data =>{
             console.log(data)
@@ -18,7 +18,7 @@ const MyEvents = () => {
     const handleDeleteEvent = id => {
         const proceed = window.confirm('Are you sure want to delete');
         if (proceed) {
-            const url = `https://shielded-falls-80975.herokuapp.com/event/${id}`;
+            const url = `https://shielded-falls-80975.herokuapp.com/registerEvent/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -36,32 +36,34 @@ const MyEvents = () => {
 
     return (
         <div>
-            <h1 className="text-center pb-2">Events</h1>
+            <h1 className="text-center pb-2">MY Events</h1>
             <div className="service-page">
                 <div className="container py-5 p-3 ">
 
                     <table className="table">
                         <tr>
                             <th>Event Name</th>
-                            <th>Event Venue </th>
-                            <th>Event Date</th>
-                            <th>Event Month</th>
+                            
+                            <th>TrxId</th>
+                           
+                            
                             <th>Application Fee</th>
-                            <th>Event Details</th>
+                          
 
                             <th>Action</th>
 
                         </tr>
                         {/* <h1>{requestRepairing.length}</h1> */}
                         {
-                            event.map(ev =>
+                            event?.map(ev =>
                                 <tr>
-                                    <td>{ev.event.eventName}</td>
-                                    <td>{ev.event.eventPlace}</td>
-                                    <td>{ev.event.eventDate}</td>
-                                    <td>{ev.event.eventMonth}</td>
-                                    <td>{ev.event.eventFee}</td>
-                                    <td>{ev.event.eventDescription}</td>
+                                    <td>{ev.eventName}</td>
+                                    
+                                    <td>{ev.trxId}</td>
+                                    
+                                    
+                                    <td>{ev.eventFee}</td>
+                                    
 
 
                                     <td data-label="Action">

@@ -54,7 +54,7 @@ const ViewBooking = () => {
 
     return (
         <div>
-            <h1 className="text-center pb-2">All Booking</h1>
+            <h1 className="text-center pb-2">All Booking Hall</h1>
             <div className="service-page">
                 <div className="container py-5 p-3 ">
 
