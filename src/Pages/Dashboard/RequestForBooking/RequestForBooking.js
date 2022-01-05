@@ -4,6 +4,7 @@ import { useParams } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Footer from '../../Shared/Footer/Footer';
+import { toast, ToastContainer } from 'react-toastify';
 const RegisterForEvent = () => {
     const [booking, setBooking] = useState({});
     const { user } = useAuth();
@@ -44,7 +45,13 @@ const RegisterForEvent = () => {
             .then(result => {
                 console.log(result)
                 if (result.insertedId) {
-                    alert('Successfully Requested Booking');
+                    toast.success('Successfully the request\'s Booked', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        progress: undefined,
+                    });
                     // reset();
                 }
             })
@@ -53,8 +60,6 @@ const RegisterForEvent = () => {
 
         e.preventDefault();
     };
-
-
     return (
         <div className="">
             <div className="place-order py-5 container">
@@ -73,6 +78,9 @@ const RegisterForEvent = () => {
 " ref={mobileRef} />
                         <input className="btn btn-success py-2 px-5 d-block w-100 mt-4" type="submit" value="Submit" />
                     </form>
+                    <ToastContainer
+                        position="top-right"
+                    />
                 </div>
             </div>
         </div>

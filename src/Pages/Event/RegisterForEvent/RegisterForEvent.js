@@ -4,6 +4,7 @@ import { useParams } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Footer from '../../Shared/Footer/Footer';
+import { toast } from 'react-toastify';
 const RegisterForEvent = () => {
     const { eventId } = useParams();
     const [events, setEvent] = useState({});
@@ -20,7 +21,7 @@ const RegisterForEvent = () => {
     const trxIdRef = useRef('');
 
     useEffect(() => {
-        fetch(`http://localhost:5000/event/${eventId}`)
+        fetch(`https://shielded-falls-80975.herokuapp.com/event/${eventId}`)
             .then(res => res.json())
             .then(data => setEvent(data.event))
     }, []);
@@ -36,7 +37,7 @@ const RegisterForEvent = () => {
 
         const newRegister = {eventName: eventName, trxId: trxId, eventFee: eventFee, name: name, email: email, address: address, mobile: mobile }
 
-        fetch(`http://localhost:5000/registerEvent`, {
+        fetch(`https://shielded-falls-80975.herokuapp.com/registerEvent`, {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -47,7 +48,13 @@ const RegisterForEvent = () => {
             .then(result => {
                 console.log(result)
                 if (result.insertedId) {
-                    alert('Registration processed successfully');
+                    toast.success('Registration processed successfully', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        progress: undefined,
+                    });
                     // reset();
                 }
             })

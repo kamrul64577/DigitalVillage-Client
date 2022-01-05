@@ -1,5 +1,6 @@
-import { Alert, Button, TextField } from '@mui/material';
+import { Button, TextField } from '@mui/material';
 import React, { useState } from 'react';
+import { ToastContainer } from 'react-bootstrap';
 
 const MakeServiceOfficer = () => {
     const [email, setEmail] = useState('');
@@ -25,11 +26,7 @@ const MakeServiceOfficer = () => {
                     setEmail('')
                     setSuccess(true)
                 }
-
             })
-
-
-
         e.preventDefault();
     }
     return (
@@ -48,7 +45,10 @@ const MakeServiceOfficer = () => {
                 <Button type="submit" variant="contained">Add Service Officer</Button>
             </form>
             {
-                success && <Alert severity="success">Successfully Add Service Officer</Alert>
+                // success && <Alert severity="success">Successfully Add Service Officer</Alert>
+                success && <ToastContainer
+                    position="top-right"
+                />
             }
         </div>
     );

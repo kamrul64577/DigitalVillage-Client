@@ -17,7 +17,6 @@ const AddReview = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    // alert('successfully added')
                     toast.success('The review\'s added successfully.', {
                         position: "top-right",
                         autoClose: 5000,

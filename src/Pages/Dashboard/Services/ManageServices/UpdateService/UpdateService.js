@@ -1,7 +1,7 @@
 import { Button, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import Textarea from 'muicss/lib/react/textarea';
+import { toast, ToastContainer } from 'react-toastify';
 const UpdateService = () => {
     const { serviceId } = useParams();
     const [services, setServices] = useState({});
@@ -11,7 +11,7 @@ const UpdateService = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setServices(data))
-    }, []);
+    }, [serviceId]);
 
 
 
@@ -45,7 +45,13 @@ const UpdateService = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount > 0) {
-                    alert('Updated successfully')
+                    toast.success('Updated successfully', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        progress: undefined,
+                    });
                     setServices({});
                 }
             })
@@ -89,6 +95,9 @@ const UpdateService = () => {
 
                 <Button variant="contained" type="submit" sx={{ width: '50%', marginLeft: '8px', m: 1 }}>Update</Button>
             </form>
+            <ToastContainer
+                position="top-right"
+            />
         </div>
     );
 };

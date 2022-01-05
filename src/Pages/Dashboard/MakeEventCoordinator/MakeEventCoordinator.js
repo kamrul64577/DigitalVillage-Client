@@ -1,5 +1,6 @@
-import { Alert, Button, TextField } from '@mui/material';
+import { Button, TextField } from '@mui/material';
 import React, { useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
 
 
 const MakeEventCoordinator = () => {
@@ -25,12 +26,15 @@ const MakeEventCoordinator = () => {
                 if (data.modifiedCount) {
                     setEmail('')
                     setSuccess(true)
+                    toast.success('Success', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        progress: undefined,
+                    });
                 }
-
             })
-
-
-
         e.preventDefault();
     }
     return (
@@ -49,8 +53,10 @@ const MakeEventCoordinator = () => {
                 <Button type="submit" variant="contained">Add Event Co-ordinator</Button>
             </form>
             {
-                success && <Alert severity="success">Sucessfully Add Event Co-ordinator</Alert>
-
+                // success && <Alert severity="success">Sucessfully Add Event Co-ordinator</Alert>
+                success && <ToastContainer
+                    position="top-right"
+                />
             }
         </div>
     );

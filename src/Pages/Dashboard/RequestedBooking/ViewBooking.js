@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
+import { toast, ToastContainer } from 'react-toastify';
 
 const ViewBooking = () => {
     const [booking, setBooking] = useState([]);
@@ -43,7 +44,13 @@ const ViewBooking = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        alert('succesfully deleted');
+                        toast.success('Successfully deleted', {
+                            position: "top-right",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            progress: undefined,
+                        });
                         const remainingBooking = booking.filter(book => book._id !== id);
                         setBooking(remainingBooking);
                     }
@@ -89,8 +96,8 @@ const ViewBooking = () => {
                                     <td>
                                         <Form.Select size="md" defaultValue={bk.status} onChange={(e) => handleOption(e, bk._id)} className="w-100">
                                             <option value="Pending">Pending</option>
-                                            
-                                            
+
+
                                             <option value="Processing">In Process</option>
                                             <option value="Approved">Approved</option>
                                         </Form.Select>
@@ -100,6 +107,9 @@ const ViewBooking = () => {
                             )
                         }
                     </table>
+                    <ToastContainer
+                        position="top-right"
+                    />
                 </div>
             </div>
         </div>

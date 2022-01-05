@@ -1,6 +1,7 @@
 import Button from '@restart/ui/esm/Button';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 
 const ViewBirthInfo = () => {
     const [birth, setBirth] = useState([]);
@@ -10,7 +11,7 @@ const ViewBirthInfo = () => {
             .then(res => res.json())
             .then(data => setBirth(data))
     }, []);
-console.log(birth);
+    console.log(birth);
     const handleDeleteBirth = id => {
         const proceed = window.confirm('Are you sure want to delete');
         if (proceed) {
@@ -21,7 +22,13 @@ console.log(birth);
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        alert('Successfully deleted');
+                        toast.success('Successfully deleted', {
+                            position: "top-right",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            progress: undefined,
+                        });
                         const remainingbirth = birth.filter(birth => birth._id !== id);
                         setBirth(remainingbirth);
                     }
@@ -41,10 +48,10 @@ console.log(birth);
                             <th>Name</th>
                             <th>Father Name</th>
                             <th>Mother Name</th>
-                            <th>Gender</th>   
+                            <th>Gender</th>
                             <th>Address</th>
                             <th>Country</th>
-                            <th>Division</th>   
+                            <th>Division</th>
                             <th>District</th>
                             <th>Village</th>
                             <th>Birth Date</th>
@@ -54,7 +61,7 @@ console.log(birth);
                         </tr>
                         {/* <h1>{requestRepairing.length}</h1> */}
                         {
-                            birth.map(ev=>
+                            birth.map(ev =>
                                 <tr>
                                     <td>{ev.birthInfo.name}</td>
                                     <td>{ev.birthInfo.fatherName}</td>
@@ -65,7 +72,7 @@ console.log(birth);
                                     <td>{ev.birthInfo.division}</td>
                                     <td>{ev.birthInfo.distric}</td>
                                     <td>{ev.birthInfo.village}</td>
-                                    <td>{ev.value.slice(0,10)}</td>
+                                    <td>{ev.value.slice(0, 10)}</td>
 
 
                                     <td data-label="Action">
@@ -76,6 +83,9 @@ console.log(birth);
                             )
                         }
                     </table>
+                    <ToastContainer
+                        position="top-right"
+                    />
                 </div>
             </div>
         </div>

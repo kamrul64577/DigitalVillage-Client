@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
 // import { Link } from 'react-router-dom';
 
 const ViewDeathInfo = () => {
@@ -20,7 +21,13 @@ const ViewDeathInfo = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        alert('succesfully deleted');
+                        toast.success('Successfully deleted', {
+                            position: "top-right",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            progress: undefined,
+                        });
                         const remainingdeath = death.filter(death => death._id !== id);
                         setDeath(remainingdeath);
                     }
@@ -62,15 +69,16 @@ const ViewDeathInfo = () => {
                                     <td>{ev.deathInfo.address}</td>
                                     <td>{ev.value.slice(0, 10)}</td>
 
-
                                     <td data-label="Action">
                                         <button onClick={() => handleDeleteDeath(ev._id)} className="btn btn-danger" style={{ backgroundColor: '#DF3D2E' }}>Delete</button>
                                     </td>
                                 </tr>
-
                             )
                         }
                     </table>
+                    <ToastContainer
+                        position="top-right"
+                    />
                 </div>
             </div>
         </div>

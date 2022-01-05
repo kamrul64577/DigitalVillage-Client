@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import Navigation from '../Shared/Navigation/Navigation'
 import { Link } from 'react-router-dom';
+import Navigation from '../Shared/Navigation/Navigation'
+import './AllServices.css'
 // import { Axios } from 'axios';
 
 const AllServices = () => {
-    const [serviceList, setServiceList] = useState([]);
-
+    const [services, setServices] = useState()
     useEffect(() => {
-        fetch("https://shielded-falls-80975.herokuapp.com/services")
+        fetch('https://shielded-falls-80975.herokuapp.com/services')
             .then(res => res.json())
-            .then(data => setServiceList(data))
+            .then(data => {
+                console.log(data)
+                setServices(data)
+            })
     }, [])
     return (
         <>
@@ -18,7 +21,7 @@ const AllServices = () => {
             <div className="container ">
                 <div className="row">
                     {
-                        serviceList.map((service) =>
+                        services.map((service) =>
                             <div className="col-lg-4 col-12" key={service._id}>
                                 <div className="card border mb-3 h-100" >
                                     <div className="card-header">{service.categories}</div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 
 const ViewServices = () => {
     const [services, setServices] = useState([]);
@@ -20,7 +21,13 @@ const ViewServices = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        // alert('Successfully deleted');
+                        toast.success('Message\'s sent successfully.', {
+                            position: "top-right",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            progress: undefined,
+                        });
                         const remainingServices = services.filter(service => service._id !== id);
                         setServices(remainingServices);
                     }
@@ -61,6 +68,9 @@ const ViewServices = () => {
                             )
                         }
                     </table>
+                    <ToastContainer
+                        position="top-right"
+                    />
                 </div>
             </div>
         </div>

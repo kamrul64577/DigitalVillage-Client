@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
 import './RequestRepairing.css'
 const RequestRepairing = () => {
     const [requestRepairing, setRequestedRepairing] = useState([]);
@@ -21,7 +22,13 @@ const RequestRepairing = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        alert('succesfully deleted');
+                        toast.success('Successfully deleted', {
+                            position: "top-right",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            progress: undefined,
+                        });
                         const remainingRepairing = requestRepairing.filter(repair => repair._id !== id);
                         setRequestedRepairing(remainingRepairing);
                     }
@@ -38,7 +45,7 @@ const RequestRepairing = () => {
 
                     <table className="table">
                         <tr>
-                            <th>Name</th>        
+                            <th>Name</th>
                             <th>Email</th>
                             <th>Mobile Number</th>
                             <th>Type</th>
@@ -48,7 +55,7 @@ const RequestRepairing = () => {
                         </tr>
                         {/* <h1>{requestRepairing.length}</h1> */}
                         {
-                            requestRepairing.map(repair => 
+                            requestRepairing.map(repair =>
                                 <tr>
                                     <td>{repair.name}</td>
                                     <td>{repair.email}</td>
@@ -58,9 +65,12 @@ const RequestRepairing = () => {
 
                                     <td data-label="Action"><button onClick={() => handleDeleteRequestRepairing(repair._id)} className="btn btn-danger" style={{ backgroundColor: '#DF3D2E' }}>Delete</button></td>
                                 </tr>
-                                )
+                            )
                         }
                     </table>
+                    <ToastContainer
+                        position="top-right"
+                    />
                 </div>
             </div>
         </div>

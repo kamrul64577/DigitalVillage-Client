@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 
 const ViewNews = () => {
     const [news, setNews] = useState([]);
@@ -20,7 +21,13 @@ const ViewNews = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        alert('succesfully deleted');
+                        toast.success('Successfully deleted', {
+                            position: "top-right",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            progress: undefined,
+                        });
                         const remainingNews = news.filter(news => news._id !== id);
                         setNews(remainingNews);
                     }
@@ -37,7 +44,7 @@ const ViewNews = () => {
 
                     <table className="table">
                         <tr>
-                            <th>Title</th>       
+                            <th>Title</th>
                             <th>Description</th>
                             <th>Image Url</th>
 
@@ -50,7 +57,7 @@ const ViewNews = () => {
                                 <tr>
                                     <td>{ns.title}</td>
                                     <td>{ns.description}</td>
-                                    <td><img  style={{width:'100px', height:'100px'}} src={ns.image} alt="" /></td>
+                                    <td><img style={{ width: '100px', height: '100px' }} src={ns.image} alt="" /></td>
 
 
                                     <td data-label="Action">
@@ -64,6 +71,9 @@ const ViewNews = () => {
                             )
                         }
                     </table>
+                    <ToastContainer
+                        position="top-right"
+                    />
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
-    const [userType, setUserType ] = useState('');
+    const [userType, setUserType] = useState('');
     // const [admin, setAdmin] = useState(false);
     // const [journalist, setJournalist] = useState(false);
     const [token, setToken] = useState('');
@@ -32,7 +32,7 @@ const useFirebase = () => {
 
                 // send name to firebase after creation
                 updateProfile(auth.currentUser, {
-                    displayName: name,  photoURL: "https://i.postimg.cc/yx3nsc6K/avatar.png"
+                    displayName: name, photoURL: "https://i.postimg.cc/yx3nsc6K/avatar.png"
                 }).then(() => {
                     // Profile updated!
                     // ...
@@ -117,13 +117,16 @@ const useFirebase = () => {
         })
             .then()
     }
-  
+    console.log(user.email)
     useEffect(() => {
-        fetch(`https://shielded-falls-80975.herokuapp.com/users/${user.email}`)
+        fetch(`https://shielded-falls-80975.herokuapp.com/users/${user?.email}`)
             .then(res => res.json())
-            .then(data => setUserType(data))
-            .catch((e) => {})
-    },[user.email])
+            .then(data => {
+                console.log(data)
+                setUserType(data)
+            })
+            .catch((e) => { })
+    }, [user.email])
 
     // User Logout
     const logOut = () => {

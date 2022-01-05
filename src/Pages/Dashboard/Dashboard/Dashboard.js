@@ -21,16 +21,12 @@ import MakeServiceOfficer from '../MakeServiceOfficer/MakeServiceOfficer'
 import MakeEventCoordinator from '../MakeEventCoordinator/MakeEventCoordinator'
 import AddEvent from '../Event/AddEvent/AddEvent'; 
 import {
-    BrowserRouter as Router,
-    Switch,
     Route,
     Link,
-    useParams,
     useRouteMatch
 } from "react-router-dom";
 import DashboardHome from '../DashboardHome/DashboardHome';
 import AddNewService from '../Services/AddNewService/AddNewService';
-// import AllServices from '../../AllServices/AllServices';
 import ViewServices from '../Services/ManageServices/ViewServices/ViewServices';
 import RequestRepairing from '../RequestedRepairing/RequestedRepairing';
 import UpdateService from '../Services/ManageServices/UpdateService/UpdateService';
@@ -48,6 +44,7 @@ import DeathRegistration from '../BirthDeathRegistration/DeathRegistration/Death
 import ViewDeathInfo from '../ViewBirthDeathInfo/ViewDeathInfo/ViewDeathInfo';
 import ApplicationOfEvent from '../Event/ApplicationOfEvent/ApplicationOfEvent';
 import AddReview from '../Review/AddReview/AddReview';
+import MyServiceBooking from '../MyServiceBooking/MyServiceBooking';
 const drawerWidth = 260;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
@@ -154,80 +151,81 @@ export default function Dashboard() {
                    Navigation
                 </DrawerHeader>
                 <List>
-                    <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to="/">Back to Home </Link>
+                    <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to="/">Back to Home </Link>
                     <br/>
                     
                    {
                         userType === '' && <Box>
-                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/requestForBooking`}>Book the Wedding Hall </Link>
+                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/requestForBooking`}>Book the Wedding Hall </Link>
                              <br />
-                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/myBooking`}>My Booking Information</Link> <br />
-                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/birthRegistration`}>Register Birth</Link> <br />
-                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/deathRegistration`}>Register Death</Link> <br />
-                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/addReview`}>Add Review</Link> <br />
+                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/myBooking`}>My Booking Information</Link> <br />
+                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/birthRegistration`}>Register Birth</Link> <br />
+                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/deathRegistration`}>Register Death</Link> <br />
+                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/addReview`}>Add Review</Link> <br />
+                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/myServiceBooking`}>My ServiceBooking</Link> <br />
                         </Box>
                    }
                     {
                         userType ==="serviceofficer" && <Box>
-                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/addNewService`}>Add New Service</Link> <br />
-                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/viewServices`}>Services</Link> <br />
-                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/requestedServices`}>Sent Services</Link> <br />
-                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/requestedRepairing`}>Sent Repairs</Link> <br />
+                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/addNewService`}>Add New Service</Link> <br />
+                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/viewServices`}>Services</Link> <br />
+                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/requestedServices`}>Sent Services</Link> <br />
+                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/requestedRepairing`}>Sent Repairs</Link> <br />
 
-                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/viewBirthInfo`}>Birth Registration information </Link> <br />
-                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/viewDeathInfo`}>Death Registration Information </Link> <br />
+                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/viewBirthInfo`}>Birth Registration information </Link> <br />
+                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/viewDeathInfo`}>Death Registration Information </Link> <br />
                         </Box>
                     }
                     {
                         userType==="journalist" && <Box>
-                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/viewNews`}>News </Link> <br />
-                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/addNews`}>Add New News </Link> <br />
+                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/viewNews`}>News </Link> <br />
+                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/addNews`}>Add New News </Link> <br />
                         </Box>
                     }
                     {
                         userType ==="eventCoordinator" && <Box>
-                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/viewEvent`}>Events</Link> <br />
-                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/addEvent`}>Add New Events </Link> <br />
-                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/viewEventRegistration`}>Applied Event</Link> <br />
-                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px', marginBottom: '20px' }} to={`${url}/viewBooking`}>All Booking</Link> <br />
+                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/viewEvent`}>Events</Link> <br />
+                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/addEvent`}>Add New Events </Link> <br />
+                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/viewEventRegistration`}>Applied Event</Link> <br />
+                            <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px', marginBottom: '20px' }} to={`${url}/viewBooking`}>All Booking</Link> <br />
                         </Box>
                     }
 
                     {userType ==="admin" && <Box>
-                        <Link activeStyle={{ color: 'red' }} style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }}to={`${url}/makeAdmin`}>Add Admin </Link> <br/>
-                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }}to={`${url}/makeLocalJournalist`}>Add Repoters</Link> <br/>
-                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/makeServiceOfficer`}>Add Service Officers</Link> <br/>
-                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/makeEventCoordinator`}>Add Event Co-ordinator</Link> <br/>
-                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/addNewService`}>Add New Service</Link>
+                        <Link activeStyle={{ color: 'red' }} style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }}to={`${url}/makeAdmin`}>Add Admin </Link> <br/>
+                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }}to={`${url}/makeLocalJournalist`}>Add Repoters</Link> <br/>
+                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/makeServiceOfficer`}>Add Service Officers</Link> <br/>
+                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/makeEventCoordinator`}>Add Event Co-ordinator</Link> <br/>
+                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/addNewService`}>Add New Service</Link>
                          <br/>
-                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/viewServices`}>Services</Link> <br/>
-                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/viewBirthInfo`}>Birth Registration Information</Link> <br/>
+                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/viewServices`}>Services</Link> <br/>
+                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/viewBirthInfo`}>Birth Registration Information</Link> <br/>
 
-                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/viewDeathInfo`}>Death Registration Information </Link> <br />
-                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/requestedServices`}>Sent Services</Link> 
+                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/viewDeathInfo`}>Death Registration Information </Link> <br />
+                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/requestedServices`}>Sent Services</Link> 
                         <br/>
-                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/requestedRepairing`}>Sent Repairs</Link>
+                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/requestedRepairing`}>Sent Repairs</Link>
                          <br/>
-                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/viewNews`}>News </Link> <br/>
+                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/viewNews`}>News </Link> <br/>
 
-                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor:'#DAD3C6', padding:'7px', borderRadius:'10px' }} to={`${url}/addNews`}>Add New News </Link>
+                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor:'#a1d0ff', padding:'7px', borderRadius:'10px' }} to={`${url}/addNews`}>Add New News </Link>
                          <br/>
-                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/viewEvent`}>Events</Link> <br/>
+                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/viewEvent`}>Events</Link> <br/>
 
-                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/viewEventRegistration`}>Applied Event</Link> 
+                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/viewEventRegistration`}>Applied Event</Link> 
                         <br />
 
-                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to={`${url}/addEvent`}>Add New Event </Link> 
+                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }} to={`${url}/addEvent`}>Add New Event </Link> 
                         <br/>
 
-                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px', marginBottom:'20px' }} to={`${url}/viewBooking`}>All Booking</Link> <br/>
+                        <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px', marginBottom:'20px' }} to={`${url}/viewBooking`}>All Booking</Link> <br/>
                         {/* <Link style={{ textDecoration: 'none', marginLeft: '15px' }} to={`${url}/requestedRepairing`}>Requested Repairing</Link> <br/> */}
 
 
                     </Box>}
                     
                 </List>
-                {user.email && <Button className="mb-5 bg-dark" onClick={logOut}><h6 style={{ textDecoration: 'none', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }}>Log Out</h6></Button>}
+                {user.email && <Button className="mb-5 bg-dark" onClick={logOut}><h6 style={{ textDecoration: 'none', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#a1d0ff', padding: '7px', borderRadius: '10px' }}>Log Out</h6></Button>}
                 
             </Drawer>
             <Main open={open}>
@@ -240,6 +238,9 @@ export default function Dashboard() {
                 </Route >
                 <Route path={`${path}/addReview`}>
                     <AddReview></AddReview>
+                </Route >
+                <Route path={`${path}/myServiceBooking`}>
+                    <MyServiceBooking></MyServiceBooking>
                 </Route >
 
 
@@ -308,8 +309,6 @@ export default function Dashboard() {
                 <Route path={`${path}/myBooking`}>
                     <MyBooking></MyBooking>
                 </Route >
-
-
             </Main>
         </Box>
     );

@@ -27,7 +27,7 @@ const Navigation = () => {
                             <Nav.Link as={Link} className="ms-1" to="/contact-us">Contact Us</Nav.Link>
                             {/* { !user.email &&   <Nav.Link as={Link} className="text-white fw-bold mx-3 nav-hover" to="/login">Log In</Nav.Link>} */}
 
-                            <Nav.Link as={Link} className="  dashboard-link " to="/dashboard">Dash Board</Nav.Link>
+                            <Nav.Link as={Link} className="  dashboard-link " to="/dashboard">Dashboard</Nav.Link>
 
 
                             {user.email &&
@@ -43,7 +43,7 @@ const Navigation = () => {
                                 user.email ?
                                     <Link to="/home">  <button onClick={logoutWithAlart} className="signup-button ms-5">Log Out</button></Link>
                                     :
-                                    <Link to="/signup"> <button className="signup-button ">Sign Up</button></Link>
+                                    <Link to="/register"> <button className="signup-button ">Sign Up</button></Link>
                             }
 
                             {/* { !admin &&  <h4 className="ms-4"><i className="fas fa-cart-plus"> {myBookingData?.length}</i></h4>} */}
