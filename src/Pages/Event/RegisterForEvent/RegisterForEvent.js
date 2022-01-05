@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import './RegisterForEvent.css'
+import './RegisterEvent.css'
 import { useParams } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 import Navigation from '../../Shared/Navigation/Navigation';
@@ -63,12 +63,12 @@ const RegisterForEvent = () => {
             <Navigation></Navigation>
             <div className="place-order py-5 container">
                 <div className="border p-3">
-                    <h1>ইভেন্টের সংক্রান্ত তথ্য </h1>
+                    <h1>Information About Event </h1>
                     {/* <img className="img-fluid" src={event.img} alt="" /> */}
-                    <h3>ইভেন্ট : {events.eventName}</h3>
-                    <p className="">ইভেন্টের বিবরণ : {events.eventDescription}</p>
-                    <h5 className="my-3 p-3 bg-light">আবেদন ফি:{events.eventFee}টাকা</h5>
-                    <h6>স্থান: {events.eventPlace}</h6>
+                    <h3>Event : {events.eventName}</h3>
+                    <p className="">Description Of Event : {events.eventDescription}</p>
+                    <h5 className="my-3 p-3 bg-light">Apply Fee:{events.eventFee}Money</h5>
+                    <h6>Place: {events.eventPlace}</h6>
                     {/* <h5>eventFee: ${event.eventFee}</h5> */}
                 </div>
                 <div className="border p-3 place-order-form">

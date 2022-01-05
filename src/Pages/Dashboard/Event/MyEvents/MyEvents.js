@@ -1,15 +1,19 @@
 import Button from '@restart/ui/esm/Button';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../../hooks/useAuth';
 
-const ViewEvent = () => {
+const MyEvents = () => {
     const [event, setEvent] = useState([]);
-
-    useEffect(() => {
-        fetch(`https://shielded-falls-80975.herokuapp.com/event`)
-            .then(res => res.json())
-            .then(data => setEvent(data))
-    }, []);
+    
+  const {user} =useAuth();
+    useEffect(()=>{
+        fetch(`https://shielded-falls-80975.herokuapp.com/myEvent/${user?.email}`)
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data)
+            setEvent(data)})
+    },[])
 
     const handleDeleteEvent = id => {
         const proceed = window.confirm('Are you sure want to delete');
@@ -74,7 +78,4 @@ const ViewEvent = () => {
     );
 };
 
-export default ViewEvent;
-
-
-
+export default MyEvents;
