@@ -1,5 +1,6 @@
-import { Alert, Button, TextField } from '@mui/material';
+import { Button, TextField } from '@mui/material';
 import React, { useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
 
 
 const MakeAdmin = () => {
@@ -25,6 +26,13 @@ const MakeAdmin = () => {
                 if (data.modifiedCount) {
                     setEmail('')
                     setSuccess(true)
+                    toast.success('Admin created successfully.', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        progress: undefined,
+                    });
                 }
 
             })
@@ -46,8 +54,9 @@ const MakeAdmin = () => {
                 <Button type="submit" variant="contained">Add Admin</Button>
             </form>
             {
-                success && <Alert severity="success">Add Admin Sucessfuly</Alert>
-
+                success && <ToastContainer
+                    position="top-right"
+                />
             }
         </div>
     );

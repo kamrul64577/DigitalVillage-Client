@@ -5,6 +5,7 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import Axios from 'axios';
 import DesktopDatePicker from '@mui/lab/DesktopDatePicker';
+import { toast, ToastContainer } from 'react-toastify';
 
 const DeathRegistration = () => {
     const [value, setValue] = React.useState(new Date('2021-08-18'));
@@ -27,7 +28,13 @@ const DeathRegistration = () => {
             .then(() => {
                 console.log('succesfully Insert')
             });
-        alert('Death Registration successfull')
+        toast.success('Death Registration successfully.', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            progress: undefined,
+        });
         e.preventDefault();
     }
     const handleChange = (newValue) => {
@@ -100,6 +107,9 @@ const DeathRegistration = () => {
                                             <input type="submit" className="btn btn-primary btn-lg" value="Submit" />
 
                                         </div>
+                                        <ToastContainer
+                                            position="top-right"
+                                        />
                                     </div>
                                 </form>
                             </div>

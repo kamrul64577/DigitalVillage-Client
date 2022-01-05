@@ -1,25 +1,31 @@
 
 import { useForm } from "react-hook-form";
-import Navigation from '../../../Shared/Navigation/Navigation';
+import { toast, ToastContainer } from "react-toastify";
 import './AddNewService.css'
 
 const AddNewService = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = (data) => {
-      console.log(data);
-      fetch("https://shielded-falls-80975.herokuapp.com/services", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          if (data.insertedId) {
-            alert("Successfully Added");
-            reset();
-          }
-        });
+        console.log(data);
+        fetch("https://shielded-falls-80975.herokuapp.com/services", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                if (data.insertedId) {
+                    toast.success('Successfully Added', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        progress: undefined,
+                    });
+                    reset();
+                }
+            });
     };
     return (
         <>
@@ -35,10 +41,13 @@ const AddNewService = () => {
           <input {...register("img")} placeholder="Image Url" />
           <input {...register("number")} placeholder="Price" />
 
-          <input type="submit" />
-        </form>
-      </div>
-    </>
+                    <input type="submit" value="Add service" />
+                </form>
+            </div>
+            <ToastContainer
+                position="top-right"
+            />
+        </>
     );
 };
 

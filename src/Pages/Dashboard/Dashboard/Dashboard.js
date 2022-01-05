@@ -21,16 +21,12 @@ import MakeServiceOfficer from '../MakeServiceOfficer/MakeServiceOfficer'
 import MakeEventCoordinator from '../MakeEventCoordinator/MakeEventCoordinator'
 import AddEvent from '../Event/AddEvent/AddEvent'; 
 import {
-    BrowserRouter as Router,
-    Switch,
     Route,
     Link,
-    useParams,
     useRouteMatch
 } from "react-router-dom";
 import DashboardHome from '../DashboardHome/DashboardHome';
 import AddNewService from '../Services/AddNewService/AddNewService';
-// import AllServices from '../../AllServices/AllServices';
 import ViewServices from '../Services/ManageServices/ViewServices/ViewServices';
 import RequestRepairing from '../RequestedRepairing/RequestedRepairing';
 import UpdateService from '../Services/ManageServices/UpdateService/UpdateService';
@@ -156,7 +152,7 @@ export default function Dashboard() {
                    Navigation
                 </DrawerHeader>
                 <List>
-                    <Link style={{ textDecoration: 'none', marginLeft: '15px', color: '#070903', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6', padding: '7px', borderRadius: '10px' }} to="/">Back to Home </Link>
+                    <Link style={{ textDecoration: 'none', marginLeft: '15px', marginTop: '10px', display: 'inline-block', fontSize: '18px', backgroundColor: '#DAD3C6',color: '#070903', padding: '7px', borderRadius: '10px' }} to="/">Back to Home </Link>
                     <br/>
                     
                    {
@@ -318,8 +314,6 @@ export default function Dashboard() {
                 <Route path={`${path}/myBooking`}>
                     <MyBooking></MyBooking>
                 </Route >
-
-
             </Main>
         </Box>
     );

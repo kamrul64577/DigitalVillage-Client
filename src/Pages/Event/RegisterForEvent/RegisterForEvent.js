@@ -4,13 +4,11 @@ import { useParams } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Footer from '../../Shared/Footer/Footer';
+import { toast } from 'react-toastify';
 const RegisterForEvent = () => {
     const { eventId } = useParams();
     const [events, setEvent] = useState({});
     const { user } = useAuth();
-
-
-
     const eventNameRef = useRef('');
     const eventFeeRef = useRef('');
     const userNameRef = useRef('');
@@ -47,7 +45,13 @@ const RegisterForEvent = () => {
             .then(result => {
                 console.log(result)
                 if (result.insertedId) {
-                    alert('Registration processed successfully');
+                    toast.success('Registration processed successfully', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        progress: undefined,
+                    });
                     // reset();
                 }
             })

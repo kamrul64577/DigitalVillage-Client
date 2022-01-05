@@ -1,5 +1,6 @@
-import { Alert, Button, TextField } from '@mui/material';
+import { Button, TextField } from '@mui/material';
 import React, { useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
 
 
 const MakeLocalJournalist = () => {
@@ -15,7 +16,6 @@ const MakeLocalJournalist = () => {
         fetch('https://shielded-falls-80975.herokuapp.com/users/localJournalist', {
             method: 'PUT',
             headers: {
-
                 'content-type': 'application/json'
             },
             body: JSON.stringify(user)
@@ -25,12 +25,16 @@ const MakeLocalJournalist = () => {
                 if (data.modifiedCount) {
                     setEmail('')
                     setSuccess(true)
+                    toast.success('Message\'s sent successfully.', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        progress: undefined,
+                    });
                 }
 
             })
-
-
-
         e.preventDefault();
     }
     return (
@@ -49,7 +53,10 @@ const MakeLocalJournalist = () => {
                 <Button type="submit" variant="contained">Add Journalist </Button>
             </form>
             {
-                success && <Alert severity="success">Sucessfully Add Journalist !</Alert>
+                // success && <Alert severity="success">Sucessfully Add Journalist !</Alert>
+                success && <ToastContainer
+                    position="top-right"
+                />
 
             }
         </div>

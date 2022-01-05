@@ -1,6 +1,7 @@
 import Button from '@restart/ui/esm/Button';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const ApplicationOfEvent = () => {
     const [event, setEvent] = useState([]);
@@ -21,7 +22,13 @@ const ApplicationOfEvent = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        alert('succesfully deleted');
+                        toast.success('Successfully deleted.', {
+                            position: "top-right",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            progress: undefined,
+                        });
                         const remainingEvent = event.filter(event => event._id !== id);
                         setEvent(remainingEvent);
                     }

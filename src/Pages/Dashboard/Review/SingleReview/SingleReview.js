@@ -2,7 +2,7 @@ import React from 'react';
 import Rating from 'react-rating';
 import './SingleReview.css'
 const SingleReview = (props) => {
-    const { name, description, number, _id } = props.review;
+    const { name, description, number } = props.review;
     return (
         <div>
             <div className="single-review-container shadow-lg">

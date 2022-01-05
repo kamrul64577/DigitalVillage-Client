@@ -1,6 +1,8 @@
 import { Button, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
+import { ToastContainer } from 'react-bootstrap';
 import { useParams } from 'react-router';
+import { toast } from 'react-toastify';
 
 const UpdateNews = () => {
     const { newsId } = useParams();
@@ -45,15 +47,18 @@ const UpdateNews = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount > 0) {
-                    alert('Updated successfully')
+                    toast.success('Updated successfully.', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        progress: undefined,
+                    });
                     setNews({});
                 }
             })
         e.preventDefault();
     }
-
-
-
     return (
         <div>
             <h2>This is Update News Page</h2>
@@ -90,6 +95,9 @@ const UpdateNews = () => {
 
                 <Button variant="contained" type="submit" sx={{ width: '50%', marginLeft: '8px', m: 1 }}>Update</Button>
             </form>
+            <ToastContainer
+                position="top-right"
+            />
         </div>
     );
 };
