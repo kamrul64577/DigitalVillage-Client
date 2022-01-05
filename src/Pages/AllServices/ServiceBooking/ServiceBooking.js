@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import useFirebase from '../../../hooks/useFirebase';
 import Navigation from '../../Shared/Navigation/Navigation';
 
-import './ServiceBooking.css'
 const ServiceBooking = () => {
     const { user } = useFirebase()
     const { serviceId } = useParams();
@@ -16,7 +15,6 @@ const ServiceBooking = () => {
             .then(data => {
                 console.log(data)
                 setServices(data)
-
             })
     }, [])
 
@@ -46,24 +44,17 @@ const ServiceBooking = () => {
                 }
             })
         console.log(data);
-
-
-
-    };
+    }
     return (
         <>
-
             <div className="place-order-bg" style={{ backgroundImage: `url(${exactItem[0]?.img})`, backgroundRepeat: 'no-repeat' }}>
                 <Navigation></Navigation>
                 <div className="booking-main ">
                     <div className="booking-details ">
-
                         <div className="booking-text">
                             <h1> {exactItem[0]?.name}</h1>
                             <p>{exactItem[0]?.description} </p>
-
                         </div>
-
                         <div className="booking-form">
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <input defaultValue={(user?.displayName)} {...register("name")} />

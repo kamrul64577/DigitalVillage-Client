@@ -9,9 +9,6 @@ const RegisterForEvent = () => {
     const { eventId } = useParams();
     const [events, setEvent] = useState({});
     const { user } = useAuth();
-
-
-
     const eventNameRef = useRef('');
     const eventFeeRef = useRef('');
     const userNameRef = useRef('');
@@ -79,17 +76,17 @@ const RegisterForEvent = () => {
                     {/* <h5>eventFee: ${event.eventFee}</h5> */}
                 </div>
                 <div className="border p-3 place-order-form">
-                    <h2>ইভেন্টের এর জন্য আবেদন করুন </h2>
+                    <h2>A</h2>
                     <form onSubmit={handleRegister} className="text-center mt-4">
                         {/* <input type="text" className="form-control" defaultValue={event._id || ''} ref={idRef} /> */}
                         <input type="text" className="form-control" defaultValue={events.eventName || ''} ref={eventNameRef} readOnly />
                         <input type="text" className="form-control" defaultValue={events.eventFee  || ''} ref={eventFeeRef} readOnly />
                         <input type="text" className="form-control" defaultValue={user.displayName || ''} ref={userNameRef} />
-                        <input type="text" className="form-control" placeholder="ট্রান্সেকশন আইডি" ref={trxIdRef} />
+                        <input type="text" className="form-control" placeholder="Transaction Id" ref={trxIdRef} />
                         <input type="email" className="form-control" defaultValue={user.email || ''} ref={emailRef} />
-                        <input type="text" className="form-control" placeholder="ঠিকানা " ref={addressRef} />
-                        <input type="number" className="form-control" placeholder="মোবাইল " ref={mobileRef} />
-                        <input className="btn btn-success py-2 px-5 d-block w-100 mt-4" type="submit" value="আবেদন করুন " />
+                        <input type="text" className="form-control" placeholder="Address " ref={addressRef} />
+                        <input type="number" className="form-control" placeholder="Mobile " ref={mobileRef} />
+                        <input className="btn btn-success py-2 px-5 d-block w-100 mt-4" type="submit" value="Apply for Event " />
                     </form>
                 </div>
             </div>

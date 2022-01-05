@@ -15,9 +15,10 @@ const MyServiceBooking = () => {
         setMyAllServiceBooking(data)
       })
   }, [user?.email])
-  console.log(myAllServiceBooking)
+  console.log(user)
   const handleDelete = (id) => {
     const proceed = window.confirm('Are you sure you want to delete?')
+
 
     if (proceed) {
       const url = (`https://shielded-falls-80975.herokuapp.com/order/${id}`)
