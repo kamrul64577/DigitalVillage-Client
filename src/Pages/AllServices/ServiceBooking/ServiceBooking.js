@@ -66,7 +66,7 @@ const ServiceBooking = () => {
 <form onSubmit={handleSubmit(onSubmit)}>
 
 <input defaultValue={(user?.displayName)} {...register("name")} />
-<input defaultValue={user?.email}  {...register("email")} />
+{user.email && <input defaultValue={user?.email}  {...register("email")} />}
 
  {
      exactItem[0]?.name && <input defaultValue={exactItem[0]?.name}  {...register("carName")} />

@@ -15,7 +15,6 @@ const AllServices = () => {
     },[])
     return (
         <>
-<<<<<<< HEAD
         <Navigation></Navigation>
           <div className="services-main">
   
@@ -33,25 +32,6 @@ const AllServices = () => {
                 { 
                 services?.map(service => <SingleService key={service._id} service={service}></SingleService>)
                 }
-=======
-            <Navigation></Navigation>
-            <h3 className="text-center py-3"> <Link to="/applyService" className="request" style={{ textDecoration: 'none' }}>Request for new service</Link></h3>
-            <div className="container ">
-                <div className="row">
-                    {
-                        serviceList.map((service) =>
-                            <div className="col-lg-4 col-12" key={service._id}>
-                                <div className="card border mb-3 h-100" >
-                                    <div className="card-header">{service.categories}</div>
-                                    <div className="card-body">
-                                        <h5 className="card-title">{service.name}</h5>
-                                        <p className="card-text">{service.description}</p>
-                                        <button variant="success" className="btn btn-success m-2">Request for this service</button>
-                                    </div>
-                                </div>
-                            </div>)
-                    }
->>>>>>> 33dfb14e8d1d21a571e1a3e978020d0b15600092
                 </div>
           </div>
           </>

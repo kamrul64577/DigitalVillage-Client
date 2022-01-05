@@ -121,15 +121,10 @@ const useFirebase = () => {
     useEffect(() => {
         fetch(`https://shielded-falls-80975.herokuapp.com/users/${user?.email}`)
             .then(res => res.json())
-<<<<<<< HEAD
             .then(data =>{
                 console.log(data)
                 setUserType(data)})
                 .catch((e) => {})
-=======
-            .then(data => setUserType(data))
-            .catch((e) => {})
->>>>>>> 33dfb14e8d1d21a571e1a3e978020d0b15600092
     },[user.email])
 
     // User Logout

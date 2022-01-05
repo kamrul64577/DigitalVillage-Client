@@ -13,7 +13,7 @@ const MyServiceBooking = () => {
               console.log(data)
               setMyAllServiceBooking(data)})
       },[])
-      console.log(myAllServiceBooking)
+      console.log(user)
       const handleDelete=(id) => {
         const proceed =window.confirm('Are you sure you want to delete?')
         
