@@ -46,6 +46,7 @@ import ApplicationOfEvent from '../Event/ApplicationOfEvent/ApplicationOfEvent';
 import AddReview from '../Review/AddReview/AddReview';
 import MyServiceBooking from '../MyServiceBooking/MyServiceBooking';
 import MyEvents from '../Event/MyEvents/MyEvents';
+import AdminRoute from '../../SecureRouts/AdminRoute/AdminRoute';
 const drawerWidth = 260;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
@@ -235,9 +236,9 @@ export default function Dashboard() {
                 <Route exact path={`${path}`}>
                     <DashboardHome></DashboardHome>
                 </Route >
-                <Route path={`${path}/makeAdmin`}>
+                <AdminRoute path={`${path}/makeAdmin`}>
                     <MakeAdmin></MakeAdmin>
-                </Route >
+                </AdminRoute >
                 <Route path={`${path}/addReview`}>
                     <AddReview></AddReview>
                 </Route >
@@ -248,25 +249,24 @@ export default function Dashboard() {
                     <MyEvents></MyEvents>
                 </Route >
 
-
-                <Route path={`${path}/makeServiceOfficer`}>
+                <AdminRoute path={`${path}/makeServiceOfficer`}>
                     <MakeServiceOfficer></MakeServiceOfficer>
-                </Route >
-                <Route path={`${path}/makeEventCoordinator`}>
+                </AdminRoute >
+                <AdminRoute path={`${path}/makeEventCoordinator`}>
                     <MakeEventCoordinator></MakeEventCoordinator>
-                </Route >
+                </AdminRoute >
                 <Route path={`${path}/makeLocalJournalist`}>
                     <MakeLocalJournalist></MakeLocalJournalist>
                 </Route >
-                <Route path={`${path}/addNewService`}>
+                <AdminRoute path={`${path}/addNewService`}>
                     <AddNewService></AddNewService>
-                </Route >
+                </AdminRoute>
                 <Route path={`${path}/viewServices`}>
                     <ViewServices></ViewServices>
                 </Route >
-                <Route path={`${path}/updateService/:serviceId`}>
+                <AdminRoute path={`${path}/updateService/:serviceId`}>
                     <UpdateService></UpdateService>
-                </Route >
+                </AdminRoute >
                 <Route path={`${path}/requestedServices`}>
                     <RequestServices></RequestServices>
                 </Route >
