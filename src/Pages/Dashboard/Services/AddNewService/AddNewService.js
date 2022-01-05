@@ -7,13 +7,6 @@ const AddNewService = () => {
     const [name, setName] = useState('');
     const [categories, setCategories] = useState('');
     const [description, setDescription] = useState('');
-    // const handleOnChange = e => {
-    //     const field = e.target.name;
-    //     const value = e.target.value;
-    //     const newService = { ...service }
-    //     newService[field] = value;
-    //     setService(newService);
-    // }
 
     const handleAddService = (e) => {
         axios.post('https://shielded-falls-80975.herokuapp.com/services', {
