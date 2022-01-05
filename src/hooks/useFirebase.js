@@ -117,11 +117,14 @@ const useFirebase = () => {
         })
             .then()
     }
-  
+  console.log(user.email)
     useEffect(() => {
-        fetch(`https://shielded-falls-80975.herokuapp.com/users/${user.email}`)
+        fetch(`https://shielded-falls-80975.herokuapp.com/users/${user?.email}`)
             .then(res => res.json())
-            .then(data => setUserType(data))
+            .then(data =>{
+                console.log(data)
+                setUserType(data)})
+                .catch((e) => {})
     },[user.email])
      
 
